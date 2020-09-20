@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107AE850251202980033F8C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107AE84F251202980033F8C8 /* User.swift */; };
+		109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1925175FD10076007F /* LogInViewController.swift */; };
+		109A5F1C25178E950076007F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
 		10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F00250F930A0089D715 /* AppDelegate.swift */; };
 		10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F02250F930A0089D715 /* SceneDelegate.swift */; };
-		10E23F05250F930A0089D715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F04250F930A0089D715 /* ViewController.swift */; };
+		10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F04250F930A0089D715 /* SignUpViewController.swift */; };
 		10E23F08250F930A0089D715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E23F06250F930A0089D715 /* Main.storyboard */; };
 		10E23F0A250F930D0089D715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10E23F09250F930D0089D715 /* Assets.xcassets */; };
 		10E23F0D250F930D0089D715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E23F0B250F930D0089D715 /* LaunchScreen.storyboard */; };
 		10E23F18250F930D0089D715 /* FantasyInvestorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F17250F930D0089D715 /* FantasyInvestorTests.swift */; };
 		10E23F23250F930D0089D715 /* FantasyInvestorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */; };
+		1305BF4BAD4D7C4928E74FC3 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78B28FAE35418B2E4AAC83 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework */; };
+		EE02EE967AC69B3CFD03F6BD /* Pods_FantasyInvestorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */; };
+		FF0C643A2FE8D01BBCE01295 /* Pods_FantasyInvestor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E7DB63E5DBCDDA68447804 /* Pods_FantasyInvestor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		107AE84F251202980033F8C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		109A5F1925175FD10076007F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		109A5F1B25178E950076007F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		10E23EFD250F930A0089D715 /* FantasyInvestor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyInvestor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F00250F930A0089D715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E23F02250F930A0089D715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		10E23F04250F930A0089D715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		10E23F04250F930A0089D715 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		10E23F07250F930A0089D715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10E23F09250F930D0089D715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10E23F0C250F930D0089D715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,15 @@
 		10E23F1E250F930D0089D715 /* FantasyInvestorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyInvestorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyInvestorUITests.swift; sourceTree = "<group>"; };
 		10E23F24250F930D0089D715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1702179C7979FCCB9D0165FC /* Pods-FantasyInvestor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.debug.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.debug.xcconfig"; sourceTree = "<group>"; };
+		53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyInvestorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6055EF2E184AFC6D2178A9DA /* Pods-FantasyInvestor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.release.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.release.xcconfig"; sourceTree = "<group>"; };
+		8B461896D0EDD7423FBE083D /* Pods-FantasyInvestor-FantasyInvestorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor-FantasyInvestorUITests.release.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor-FantasyInvestorUITests/Pods-FantasyInvestor-FantasyInvestorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D0E7DB63E5DBCDDA68447804 /* Pods_FantasyInvestor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyInvestor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDE061E198B7A3F52B8F8B3D /* Pods-FantasyInvestor-FantasyInvestorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor-FantasyInvestorUITests.debug.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor-FantasyInvestorUITests/Pods-FantasyInvestor-FantasyInvestorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEC15312EA9221697D03A3A0 /* Pods-FantasyInvestorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestorTests.debug.xcconfig"; path = "Target Support Files/Pods-FantasyInvestorTests/Pods-FantasyInvestorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F7A0A3E1E346BCF5F749B910 /* Pods-FantasyInvestorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestorTests.release.xcconfig"; path = "Target Support Files/Pods-FantasyInvestorTests/Pods-FantasyInvestorTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB78B28FAE35418B2E4AAC83 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyInvestor_FantasyInvestorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF0C643A2FE8D01BBCE01295 /* Pods_FantasyInvestor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE02EE967AC69B3CFD03F6BD /* Pods_FantasyInvestorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1305BF4BAD4D7C4928E74FC3 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +104,8 @@
 				10E23F16250F930D0089D715 /* FantasyInvestorTests */,
 				10E23F21250F930D0089D715 /* FantasyInvestorUITests */,
 				10E23EFE250F930A0089D715 /* Products */,
+				6E9732774EF9B6685558C74A /* Pods */,
+				E5CFFE5B8AB7026D3170781F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +124,14 @@
 			children = (
 				10E23F00250F930A0089D715 /* AppDelegate.swift */,
 				10E23F02250F930A0089D715 /* SceneDelegate.swift */,
-				10E23F04250F930A0089D715 /* ViewController.swift */,
+				109A5F1B25178E950076007F /* Extensions.swift */,
+				10E23F04250F930A0089D715 /* SignUpViewController.swift */,
+				109A5F1925175FD10076007F /* LogInViewController.swift */,
 				10E23F06250F930A0089D715 /* Main.storyboard */,
 				10E23F09250F930D0089D715 /* Assets.xcassets */,
 				10E23F0B250F930D0089D715 /* LaunchScreen.storyboard */,
 				10E23F0E250F930D0089D715 /* Info.plist */,
+				107AE84F251202980033F8C8 /* User.swift */,
 			);
 			path = FantasyInvestor;
 			sourceTree = "<group>";
@@ -128,6 +154,29 @@
 			path = FantasyInvestorUITests;
 			sourceTree = "<group>";
 		};
+		6E9732774EF9B6685558C74A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1702179C7979FCCB9D0165FC /* Pods-FantasyInvestor.debug.xcconfig */,
+				6055EF2E184AFC6D2178A9DA /* Pods-FantasyInvestor.release.xcconfig */,
+				DDE061E198B7A3F52B8F8B3D /* Pods-FantasyInvestor-FantasyInvestorUITests.debug.xcconfig */,
+				8B461896D0EDD7423FBE083D /* Pods-FantasyInvestor-FantasyInvestorUITests.release.xcconfig */,
+				DEC15312EA9221697D03A3A0 /* Pods-FantasyInvestorTests.debug.xcconfig */,
+				F7A0A3E1E346BCF5F749B910 /* Pods-FantasyInvestorTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E5CFFE5B8AB7026D3170781F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0E7DB63E5DBCDDA68447804 /* Pods_FantasyInvestor.framework */,
+				FB78B28FAE35418B2E4AAC83 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework */,
+				53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10E23F27250F930D0089D715 /* Build configuration list for PBXNativeTarget "FantasyInvestor" */;
 			buildPhases = (
+				B50B2DE402A472484FA79F82 /* [CP] Check Pods Manifest.lock */,
 				10E23EF9250F930A0089D715 /* Sources */,
 				10E23EFA250F930A0089D715 /* Frameworks */,
 				10E23EFB250F930A0089D715 /* Resources */,
+				347457AE025B7C0F32A8589B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10E23F2A250F930D0089D715 /* Build configuration list for PBXNativeTarget "FantasyInvestorTests" */;
 			buildPhases = (
+				688BB4A2D15C99B19042E206 /* [CP] Check Pods Manifest.lock */,
 				10E23F0F250F930D0089D715 /* Sources */,
 				10E23F10250F930D0089D715 /* Frameworks */,
 				10E23F11250F930D0089D715 /* Resources */,
@@ -170,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10E23F2D250F930D0089D715 /* Build configuration list for PBXNativeTarget "FantasyInvestorUITests" */;
 			buildPhases = (
+				1311AEF28043536DEDB140AC /* [CP] Check Pods Manifest.lock */,
 				10E23F1A250F930D0089D715 /* Sources */,
 				10E23F1B250F930D0089D715 /* Frameworks */,
 				10E23F1C250F930D0089D715 /* Resources */,
+				AF77922DF1691DFEC1CBA107 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,13 +308,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1311AEF28043536DEDB140AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FantasyInvestor-FantasyInvestorUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		347457AE025B7C0F32A8589B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		688BB4A2D15C99B19042E206 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FantasyInvestorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF77922DF1691DFEC1CBA107 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FantasyInvestor-FantasyInvestorUITests/Pods-FantasyInvestor-FantasyInvestorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FantasyInvestor-FantasyInvestorUITests/Pods-FantasyInvestor-FantasyInvestorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FantasyInvestor-FantasyInvestorUITests/Pods-FantasyInvestor-FantasyInvestorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B50B2DE402A472484FA79F82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FantasyInvestor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10E23EF9250F930A0089D715 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E23F05250F930A0089D715 /* ViewController.swift in Sources */,
+				107AE850251202980033F8C8 /* User.swift in Sources */,
+				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
+				109A5F1C25178E950076007F /* Extensions.swift in Sources */,
 				10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */,
+				109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */,
 				10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +592,7 @@
 		};
 		10E23F28250F930D0089D715 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1702179C7979FCCB9D0165FC /* Pods-FantasyInvestor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +611,7 @@
 		};
 		10E23F29250F930D0089D715 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6055EF2E184AFC6D2178A9DA /* Pods-FantasyInvestor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +630,7 @@
 		};
 		10E23F2B250F930D0089D715 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC15312EA9221697D03A3A0 /* Pods-FantasyInvestorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +653,7 @@
 		};
 		10E23F2C250F930D0089D715 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7A0A3E1E346BCF5F749B910 /* Pods-FantasyInvestorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +676,7 @@
 		};
 		10E23F2E250F930D0089D715 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDE061E198B7A3F52B8F8B3D /* Pods-FantasyInvestor-FantasyInvestorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +697,7 @@
 		};
 		10E23F2F250F930D0089D715 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B461896D0EDD7423FBE083D /* Pods-FantasyInvestor-FantasyInvestorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
