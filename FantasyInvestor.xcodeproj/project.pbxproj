@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1063894C251A631A00223CA3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063894B251A631A00223CA3 /* DashboardViewController.swift */; };
+		1063894E251A671C00223CA3 /* DashboardTableCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063894D251A671C00223CA3 /* DashboardTableCells.swift */; };
 		107AE850251202980033F8C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107AE84F251202980033F8C8 /* User.swift */; };
 		109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1925175FD10076007F /* LogInViewController.swift */; };
 		109A5F1C25178E950076007F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
+		10B088DA2518C1A400B63237 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088D92518C1A400B63237 /* Validation.swift */; };
+		10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088DB2518C7C800B63237 /* Portfolio.swift */; };
 		10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F00250F930A0089D715 /* AppDelegate.swift */; };
 		10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F02250F930A0089D715 /* SceneDelegate.swift */; };
 		10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F04250F930A0089D715 /* SignUpViewController.swift */; };
@@ -41,9 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1063894B251A631A00223CA3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		1063894D251A671C00223CA3 /* DashboardTableCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableCells.swift; sourceTree = "<group>"; };
 		107AE84F251202980033F8C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		109A5F1925175FD10076007F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		109A5F1B25178E950076007F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		10B088D92518C1A400B63237 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		10B088DB2518C7C800B63237 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		10E23EFD250F930A0089D715 /* FantasyInvestor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyInvestor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F00250F930A0089D715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E23F02250F930A0089D715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,13 +133,17 @@
 				10E23F00250F930A0089D715 /* AppDelegate.swift */,
 				10E23F02250F930A0089D715 /* SceneDelegate.swift */,
 				109A5F1B25178E950076007F /* Extensions.swift */,
+				10B088D92518C1A400B63237 /* Validation.swift */,
 				10E23F04250F930A0089D715 /* SignUpViewController.swift */,
 				109A5F1925175FD10076007F /* LogInViewController.swift */,
+				1063894B251A631A00223CA3 /* DashboardViewController.swift */,
+				1063894D251A671C00223CA3 /* DashboardTableCells.swift */,
 				10E23F06250F930A0089D715 /* Main.storyboard */,
 				10E23F09250F930D0089D715 /* Assets.xcassets */,
 				10E23F0B250F930D0089D715 /* LaunchScreen.storyboard */,
 				10E23F0E250F930D0089D715 /* Info.plist */,
 				107AE84F251202980033F8C8 /* User.swift */,
+				10B088DB2518C7C800B63237 /* Portfolio.swift */,
 			);
 			path = FantasyInvestor;
 			sourceTree = "<group>";
@@ -416,12 +428,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */,
+				1063894C251A631A00223CA3 /* DashboardViewController.swift in Sources */,
 				107AE850251202980033F8C8 /* User.swift in Sources */,
 				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
 				109A5F1C25178E950076007F /* Extensions.swift in Sources */,
+				1063894E251A671C00223CA3 /* DashboardTableCells.swift in Sources */,
 				10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */,
 				109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */,
 				10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */,
+				10B088DA2518C1A400B63237 /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

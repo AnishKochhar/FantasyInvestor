@@ -11,13 +11,13 @@ import Foundation
 class User {
     let id: String
     let username: String
-    var password: String
-    let email: String
+    var portfolio: Portfolio
     
-    init(id: String, username: String, password: String, email: String) {
+    
+    init(id: String, username: String, portfolio: Portfolio) {
         self.id = id
         self.username = username
-        self.password = password
-        self.email = email
+        self.portfolio = portfolio
     }
 }
+

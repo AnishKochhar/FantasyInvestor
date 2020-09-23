@@ -15,6 +15,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     var defaultEmail = ""
+    let validation = Validation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +32,14 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: Any) {
-//        Perform Validation
+        let username = usernameField.text!
+        let password = passwordField.text!
+        let email = emailField.text!
         
-//        Add them to database
+        if validation.checkAll(username: username, email: email, password: password) {
+            // Check they aren't in use in the database
+
+        }
     }
     
     @IBAction func switchToLogIn(_ sender: Any) {
