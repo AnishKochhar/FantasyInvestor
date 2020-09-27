@@ -9,7 +9,7 @@
 import UIKit
 
 class PerformanceCell: UITableViewCell {
-    @IBOutlet weak var performanceLabel: UILabel!
+    @IBOutlet weak var timeFrameLabel: UILabel!
     @IBOutlet weak var profitLabel: UILabel!
 }
 

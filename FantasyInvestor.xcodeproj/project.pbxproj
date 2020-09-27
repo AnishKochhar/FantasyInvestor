@@ -12,6 +12,7 @@
 		107AE850251202980033F8C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107AE84F251202980033F8C8 /* User.swift */; };
 		109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1925175FD10076007F /* LogInViewController.swift */; };
 		109A5F1C25178E950076007F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
+		10A4AC9325212D6D008D09BB /* PerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */; };
 		10B088DA2518C1A400B63237 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088D92518C1A400B63237 /* Validation.swift */; };
 		10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088DB2518C7C800B63237 /* Portfolio.swift */; };
 		10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F00250F930A0089D715 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		107AE84F251202980033F8C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		109A5F1925175FD10076007F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		109A5F1B25178E950076007F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewController.swift; sourceTree = "<group>"; };
 		10B088D92518C1A400B63237 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		10B088DB2518C7C800B63237 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		10E23EFD250F930A0089D715 /* FantasyInvestor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyInvestor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				10E23F04250F930A0089D715 /* SignUpViewController.swift */,
 				109A5F1925175FD10076007F /* LogInViewController.swift */,
 				1063894B251A631A00223CA3 /* DashboardViewController.swift */,
+				10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */,
 				1063894D251A671C00223CA3 /* DashboardTableCells.swift */,
 				10E23F06250F930A0089D715 /* Main.storyboard */,
 				10E23F09250F930D0089D715 /* Assets.xcassets */,
@@ -434,6 +437,7 @@
 				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
 				109A5F1C25178E950076007F /* Extensions.swift in Sources */,
 				1063894E251A671C00223CA3 /* DashboardTableCells.swift in Sources */,
+				10A4AC9325212D6D008D09BB /* PerformanceTableViewController.swift in Sources */,
 				10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */,
 				109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */,
 				10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */,
