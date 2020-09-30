@@ -11,15 +11,18 @@ import UIKit
 class PerformanceTableViewController: UITableViewController {
 
     @IBOutlet var table: UITableView!
-    let performance = ["All Time": "+8.75%", "Last month": "-2.14%"]
+    let performance = ["All Time": 8.75, "Last month": -2.14]
+    
+    let green = UIColor(red: 69/256, green: 196/256, blue: 69/256, alpha: 1.0)
+    let red = UIColor(red: 200/256, green: 15/256, blue: 50/256, alpha: 1.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        table.rowHeight = 80
-        table.layer.borderWidth = 2.0
-        table.layer.borderColor = CGColor(srgbRed: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         table.layer.cornerRadius = 5.0
+        table.rowHeight = 80
+        
+        table.separatorColor = UIColor(red: 141/256, green: 141/256, blue: 141/256, alpha: 0.4)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,12 +36,26 @@ class PerformanceTableViewController: UITableViewController {
         }
         if index == 0 {
             let timeFrame = "All Time"
+            guard let profit = performance[timeFrame] else { return UITableViewCell() }
             cell.timeFrameLabel.text = timeFrame
-            cell.profitLabel.text = performance[timeFrame]
+            if profit >= 0.0 {
+                cell.profitLabel.text = "+\(profit)%"
+                cell.profitLabel.textColor = green
+            } else {
+                cell.profitLabel.text = "\(profit)%"
+                cell.profitLabel.textColor = red
+            }
         } else {
             let timeFrame = "Last month"
+            guard let profit = performance[timeFrame] else { return UITableViewCell() }
             cell.timeFrameLabel.text = timeFrame
-            cell.profitLabel.text = performance[timeFrame]
+            if profit >= 0.0 {
+                cell.profitLabel.text = "+\(profit)%"
+                cell.profitLabel.textColor = green
+            } else {
+                cell.profitLabel.text = "\(profit)%"
+                cell.profitLabel.textColor = red
+            }
         }
         return cell
 
