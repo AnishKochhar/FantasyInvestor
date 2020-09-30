@@ -10,25 +10,102 @@ import XCTest
 @testable import FantasyInvestor
 
 class FantasyInvestorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    var validation: Validation!
+    
+    override func setUp() {
+        super.setUp()
+        validation = Validation()
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testValidatorReturnsFalseWhenGivenTooShortUsername() {
+        // 1. given
+        let username = "de"
+        let password = "validpassword"
+        let email = "testemail@gmail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testValidatorReturnsFalseWhenGivenTooLongUsername() {
+        // 1. given
+        let username = "veryLongUsernamePerhapsTooLong"
+        let password = "validpassword"
+        let email = "testemail@gmail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testValidatorReturnsFalseWhenGivenInvalidEmail() {
+        // 1. given
+        let username = "validUsername"
+        let password = "validpassword"
+        let email = "testemail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
     }
+    
+    func testValidatorReturnsFalseWhenGivenEmptyUsername() {
+        // 1. given
+        let username = ""
+        let password = "validpassword"
+        let email = "testemail@gmail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
+    }
+    
+    func testValidatorReturnsFalseWhenGivenEmptyPassword() {
+        // 1. given
+        let username = "validUsername"
+        let password = ""
+        let email = "testemail@gmail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
+    }
+    
+    func testValidatorReturnsFalseWhenGivenEmptyEmail() {
+        // 1. given
+        let username = "validUsername"
+        let password = "validPassword"
+        let email = ""
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
+    }
+    
+    func testValidatorReturnsTrueWhenGivenAllValidInputs() {
+        // 1. given
+        let username = "validUsername"
+        let password = "validPassword"
+        let email = "testemail@gmail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, true)
+    }
+    
+    func testValidatorReturnsFalseWhenPasswordContainsSpace() {
+        // 1. given
+        let username = "validUsername"
+        let password = "space here"
+        let email = "testemail@gmail.com"
+        // 2. when
+        let validDetails = validation.checkAll(username: username, email: email, password: password)
+        // 3. then
+        XCTAssertEqual(validDetails, false)
+    }
+    
 
 }
+

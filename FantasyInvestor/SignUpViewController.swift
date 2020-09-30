@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
 
@@ -27,6 +28,17 @@ class SignUpViewController: UIViewController {
         self.passwordField.addDoneButton(title: "Done", target: self, selector: #selector(tapDone(sender:)))
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let currentUser = PFUser.current()
+        if currentUser != nil {
+            loadDashboard()
+        }
+    }
+    
+    func loadDashboard() {
+        
+    }
+    
     @objc func tapDone(sender: Any) {
         self.view.endEditing(true)
     }
@@ -35,6 +47,11 @@ class SignUpViewController: UIViewController {
         let username = usernameField.text!
         let password = passwordField.text!
         let email = emailField.text!
+        
+        let user = PFUser()
+        user.username = username
+        user.password = password
+        user.email = email
         
         if validation.checkAll(username: username, email: email, password: password) {
             // Check they aren't in use in the database
