@@ -36,7 +36,9 @@ class SignUpViewController: UIViewController {
     }
     
     func loadDashboard() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashboardViewController = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+        UIApplication.shared.windows[0].rootViewController = dashboardViewController
     }
     
     @objc func tapDone(sender: Any) {
@@ -54,8 +56,34 @@ class SignUpViewController: UIViewController {
         user.email = email
         
         if validation.checkAll(username: username, email: email, password: password) {
-            // Check they aren't in use in the database
-
+            user.signUpInBackground { (success, error) in
+                if success {
+                    self.createDefaultPortfolio(userID: user.objectId!)
+                    self.loadDashboard()
+                } else {
+                    if let descrip = error?.localizedDescription {
+                        self.displayErrorMessage(message: descrip)
+                    }
+                }
+            }
+        } else {
+            self.displayErrorMessage(message: "Invalid fields")
+        }
+    }
+    
+    func createDefaultPortfolio(userID: String) {
+        let portfolio = PFObject(className: "Portfolio")
+        
+        portfolio["User"] = userID
+        portfolio["Instruments"] = ["Apple", "Amazon"]
+        portfolio["Prices"] = [111.90, 1034.32]
+        
+        portfolio.saveInBackground { (success, error) in
+            if !success {
+                if let descrip = error?.localizedDescription {
+                    self.displayErrorMessage(message: descrip)
+                }
+            }
         }
     }
     
@@ -68,6 +96,17 @@ class SignUpViewController: UIViewController {
         
         newVC.modalPresentationStyle = .fullScreen
         self.present(newVC, animated: true)
+    }
+    
+    func displayErrorMessage(message: String) {
+        let alertView = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        alertView.addAction(OKAction)
+        if let presenter = alertView.popoverPresentationController {
+            presenter.sourceView = self.view
+            presenter.sourceRect = self.view.bounds
+        }
+        self.present(alertView, animated: true, completion: nil)
     }
     
 }

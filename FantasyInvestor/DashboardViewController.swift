@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class DashboardViewController: UIViewController {
 
@@ -22,17 +23,12 @@ class DashboardViewController: UIViewController {
     
     var distanceBetweenLineViewAndBalanceLabel: CGFloat = 0
     
+    let currentUserID = PFUser.current()!.objectId!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        portfolio.addInstrument(symbol: "Amazon", price: 3077.96)
-        portfolio.addInstrument(symbol: "Apple", price: 111.90)
-        portfolio.addInstrument(symbol: "Tesla", price: 423.04)
-        portfolio.addInstrument(symbol: "Barclays", price: 0.94)
-        portfolio.addInstrument(symbol: "Disney", price: 3077.96)
-        portfolio.addInstrument(symbol: "Google", price: 111.90)
-        portfolio.addInstrument(symbol: "Bet365", price: 423.04)
-        portfolio.addInstrument(symbol: "Yahoo", price: 0.94)
+        getPortfolio()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -41,7 +37,7 @@ class DashboardViewController: UIViewController {
         
         calculateDistance()
     }
-    
+
     func calculateDistance() {
         distanceBetweenLineViewAndBalanceLabel = self.lineView.frame.minY - self.balanceLabel.frame.maxY
     }
@@ -62,6 +58,46 @@ class DashboardViewController: UIViewController {
                 self.tableHeight.constant = newSize.height
             }
         }
+    }
+}
+
+extension DashboardViewController {
+    
+    func getPortfolio() {
+        let query = PFQuery(className: "Portfolio")
+        
+        query.whereKey("User", equalTo: currentUserID)
+        query.findObjectsInBackground { (objects, error) in
+            if let objects = objects {
+                self.updatePortfolioWithReturnedObjects(objects: objects)
+            } else {
+                if let descrip = error?.localizedDescription {
+                    self.displayErrorMessage(message: descrip)
+                }
+            }
+        }
+    }
+    
+    func updatePortfolioWithReturnedObjects(objects: [PFObject]) {
+        let userPortfolio = objects[0]
+        let instruments = userPortfolio["Instruments"] as! [String]
+        let prices = userPortfolio["Prices"] as! [Double]
+        assert(instruments.count == prices.count)
+        for i in 0 ..< instruments.count {
+            portfolio.addInstrument(symbol: instruments[i], price: prices[i])
+        }
+        self.tableView.reloadData()
+    }
+    
+    func displayErrorMessage(message: String) {
+        let alertView = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        alertView.addAction(OKAction)
+        if let presenter = alertView.popoverPresentationController {
+            presenter.sourceView = self.view
+            presenter.sourceRect = self.view.bounds
+        }
+        self.present(alertView, animated: true, completion: nil)
     }
 }
 
