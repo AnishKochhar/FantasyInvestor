@@ -36,10 +36,22 @@ class DashboardViewController: UIViewController {
         self.scrollView.delegate = self
         
         calculateDistance()
+        blurBackground()
     }
 
     func calculateDistance() {
         distanceBetweenLineViewAndBalanceLabel = self.lineView.frame.minY - self.balanceLabel.frame.maxY
+    }
+    
+    func blurBackground() {
+        balanceBackgroundView.backgroundColor = .clear
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blur.frame = balanceBackgroundView.frame
+        blur.isUserInteractionEnabled = false
+        blur.clipsToBounds = true
+        balanceBackgroundView.addSubview(blur)
+        balanceBackgroundView.sendSubviewToBack(blur)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

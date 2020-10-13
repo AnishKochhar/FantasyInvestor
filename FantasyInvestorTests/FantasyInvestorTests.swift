@@ -105,7 +105,5 @@ class FantasyInvestorTests: XCTestCase {
         // 3. then
         XCTAssertEqual(validDetails, false)
     }
-    
-
 }
 
