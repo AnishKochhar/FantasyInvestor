@@ -11,18 +11,26 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class AddInstrumentsCollectionViewController: UICollectionViewController {
+    
+    var stocks: [Stock]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let textFileLoader = loadTextFile(name: "Instruments.txt")
-        textFileLoader.downloadTextFile()
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let textFileLoader = loadTextFile()
+        stocks = textFileLoader.returnStockData()
+        print("hi")
+        print(stocks)
+    }
+    
 
     /*
     // MARK: - Navigation

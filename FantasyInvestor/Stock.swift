@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import Foundation
 
-class Stock {
+class Stock: Codable {
     var symbol: String
     var name: String
     var description: String
     var currentPrice: Double
     var yearFounded: Int
     var marketCap: String
-    var logo: UIImage?
+    var logo: Data?
     
     init(symbol: String, name: String, description: String, currentPrice: Double, yearFounded: Int, marketCap: String) {
         self.symbol = symbol
@@ -24,6 +25,15 @@ class Stock {
         self.currentPrice = currentPrice
         self.yearFounded = yearFounded
         self.marketCap = marketCap
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case symbol = "Symbol"
+        case name = "Name"
+        case description = "Description"
+        case currentPrice = "Current Price"
+        case yearFounded = "Founded"
+        case marketCap = "Market Cap"
     }
 }
 

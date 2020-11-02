@@ -34,6 +34,7 @@ class DashboardViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.rowHeight = 80
         self.scrollView.delegate = self
+        tableView.layer.cornerRadius = 5.0
         
         calculateDistance()
         blurBackground()
