@@ -8,15 +8,15 @@
 
 import UIKit
 import Foundation
+import Parse
 
-class Stock: Codable {
+class StockInfo: Codable {
     var symbol: String
     var name: String
     var description: String
     var currentPrice: Double
     var yearFounded: Int
     var marketCap: String
-    var logo: Data?
     
     init(symbol: String, name: String, description: String, currentPrice: Double, yearFounded: Int, marketCap: String) {
         self.symbol = symbol
@@ -37,4 +37,18 @@ class Stock: Codable {
     }
 }
 
+class Stock {
+    var image: PFFileObject?
+    var symbol: String
+    
+    init(symbol: String, image: PFFileObject) {
+        self.image = image
+        self.symbol = symbol
+    }
+    
+    init(pfObject: PFObject) {
+        self.image = pfObject["Image"] as? PFFileObject
+        self.symbol = pfObject["Symbol"] as! String
+    }
+}
 

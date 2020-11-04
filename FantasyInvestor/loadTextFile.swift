@@ -9,10 +9,14 @@
 import Foundation
 import Parse
 
+protocol textFileDownloadDelegate {
+    func didFinishDownloading(_ sender: loadTextFile)
+}
+
 class loadTextFile {
     
-    var stocks: [Stock]?
-    
+    var stocks: [StockInfo]?
+    var delegate: textFileDownloadDelegate?
     
     func downloadTextFile(name: String) {
         let query = PFQuery(className: "TextFiles")
@@ -39,9 +43,12 @@ class loadTextFile {
         file.getDataInBackground(block: { (fileData, error) in
             if let fileData = fileData {
                 do {
-                    let stocks = try JSONDecoder().decode([Stock].self, from: fileData)
+                    let stocks = try JSONDecoder().decode([StockInfo].self, from: fileData)
                     self.stocks = stocks
-                    print(self.stocks![9].name)
+                    DispatchQueue.main.async {
+                        self.didDownloadImage()
+                    }
+                    
                 } catch {
                     print(error)
                 }
@@ -49,10 +56,12 @@ class loadTextFile {
         })
     }
     
-    func returnStockData() -> [Stock]? {
+    func loadStockData() {
         self.downloadTextFile(name: "Instruments.txt")
-        print(self.stocks![0])
-        return self.stocks
+    }
+    
+    func didDownloadImage() {
+        delegate?.didFinishDownloading(self)
     }
 }
 
