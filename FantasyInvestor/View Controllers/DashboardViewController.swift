@@ -11,8 +11,6 @@ import Parse
 
 class DashboardViewController: UIViewController {
 
-    var portfolio: Portfolio = Portfolio(prices: [String: Double](), profit: 0.0)
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     
@@ -95,11 +93,15 @@ extension DashboardViewController {
         let userPortfolio = objects[0]
         let instruments = userPortfolio["Instruments"] as! [String]
         let prices = userPortfolio["Prices"] as! [Double]
+        let balance = userPortfolio["Balance"] as! Double
         assert(instruments.count == prices.count)
         for i in 0 ..< instruments.count {
             portfolio.addInstrument(symbol: instruments[i], price: prices[i])
         }
+        portfolio.setBalance(balance: balance)
+        
         self.tableView.reloadData()
+        self.balanceLabel.text = "Balance: \(portfolio.balance)"
     }
     
     func displayErrorMessage(message: String) {

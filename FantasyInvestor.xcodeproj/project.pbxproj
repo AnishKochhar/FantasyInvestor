@@ -15,6 +15,8 @@
 		107AE850251202980033F8C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107AE84F251202980033F8C8 /* User.swift */; };
 		109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1925175FD10076007F /* LogInViewController.swift */; };
 		109A5F1C25178E950076007F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
+		109BCFBA2553215800D8A3D3 /* InstrumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */; };
+		109BCFBF255321E400D8A3D3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
 		10A4AC9325212D6D008D09BB /* PerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */; };
 		10ADA8D125362410007576E7 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ADA8D025362410007576E7 /* Stock.swift */; };
 		10ADA8D325363B1E007576E7 /* loadTextFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ADA8D225363B1E007576E7 /* loadTextFile.swift */; };
@@ -29,6 +31,7 @@
 		10E23F0D250F930D0089D715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E23F0B250F930D0089D715 /* LaunchScreen.storyboard */; };
 		10E23F18250F930D0089D715 /* FantasyInvestorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F17250F930D0089D715 /* FantasyInvestorTests.swift */; };
 		10E23F23250F930D0089D715 /* FantasyInvestorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */; };
+		10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15FB72561DE08001AC8F4 /* BuyView.swift */; };
 		1305BF4BAD4D7C4928E74FC3 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78B28FAE35418B2E4AAC83 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework */; };
 		EE02EE967AC69B3CFD03F6BD /* Pods_FantasyInvestorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */; };
 		FF0C643A2FE8D01BBCE01295 /* Pods_FantasyInvestor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E7DB63E5DBCDDA68447804 /* Pods_FantasyInvestor.framework */; };
@@ -59,6 +62,7 @@
 		107AE84F251202980033F8C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		109A5F1925175FD10076007F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		109A5F1B25178E950076007F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentDetailViewController.swift; sourceTree = "<group>"; };
 		10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewController.swift; sourceTree = "<group>"; };
 		10ADA8D025362410007576E7 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		10ADA8D225363B1E007576E7 /* loadTextFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadTextFile.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		10E23F1E250F930D0089D715 /* FantasyInvestorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyInvestorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyInvestorUITests.swift; sourceTree = "<group>"; };
 		10E23F24250F930D0089D715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10F15FB72561DE08001AC8F4 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		1702179C7979FCCB9D0165FC /* Pods-FantasyInvestor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.debug.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.debug.xcconfig"; sourceTree = "<group>"; };
 		53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyInvestorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6055EF2E184AFC6D2178A9DA /* Pods-FantasyInvestor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.release.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +122,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		109BCFBB2553217600D8A3D3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				10E23F04250F930A0089D715 /* SignUpViewController.swift */,
+				109A5F1925175FD10076007F /* LogInViewController.swift */,
+				10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */,
+				1063894B251A631A00223CA3 /* DashboardViewController.swift */,
+				1028FDA825347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift */,
+				109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		109BCFBC255321A100D8A3D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				10ADA8D025362410007576E7 /* Stock.swift */,
+				107AE84F251202980033F8C8 /* User.swift */,
+				10B088DB2518C7C800B63237 /* Portfolio.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		109BCFBD255321BD00D8A3D3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				10F15FB72561DE08001AC8F4 /* BuyView.swift */,
+				1028FDAA25347F3A00DA9BC7 /* StocksCell.swift */,
+				1063894D251A671C00223CA3 /* DashboardTableCells.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		109BCFBE255321D300D8A3D3 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				10B088D92518C1A400B63237 /* Validation.swift */,
+				10ADA8D225363B1E007576E7 /* loadTextFile.swift */,
+				109A5F1B25178E950076007F /* Extensions.swift */,
+			);
+			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
 		10E23EF4250F930A0089D715 = {
 			isa = PBXGroup;
 			children = (
@@ -144,23 +192,14 @@
 			children = (
 				10E23F00250F930A0089D715 /* AppDelegate.swift */,
 				10E23F02250F930A0089D715 /* SceneDelegate.swift */,
-				109A5F1B25178E950076007F /* Extensions.swift */,
-				10B088D92518C1A400B63237 /* Validation.swift */,
-				10E23F04250F930A0089D715 /* SignUpViewController.swift */,
-				109A5F1925175FD10076007F /* LogInViewController.swift */,
-				1028FDAA25347F3A00DA9BC7 /* StocksCell.swift */,
-				1063894D251A671C00223CA3 /* DashboardTableCells.swift */,
-				10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */,
-				1063894B251A631A00223CA3 /* DashboardViewController.swift */,
-				1028FDA825347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift */,
-				10ADA8D225363B1E007576E7 /* loadTextFile.swift */,
+				109BCFBB2553217600D8A3D3 /* View Controllers */,
+				109BCFBD255321BD00D8A3D3 /* Cells */,
+				109BCFBC255321A100D8A3D3 /* Models */,
+				109BCFBE255321D300D8A3D3 /* Custom Classes */,
 				10E23F06250F930A0089D715 /* Main.storyboard */,
 				10E23F09250F930D0089D715 /* Assets.xcassets */,
 				10E23F0B250F930D0089D715 /* LaunchScreen.storyboard */,
 				10E23F0E250F930D0089D715 /* Info.plist */,
-				10ADA8D025362410007576E7 /* Stock.swift */,
-				107AE84F251202980033F8C8 /* User.swift */,
-				10B088DB2518C7C800B63237 /* Portfolio.swift */,
 			);
 			path = FantasyInvestor;
 			sourceTree = "<group>";
@@ -448,6 +487,7 @@
 				10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */,
 				1063894C251A631A00223CA3 /* DashboardViewController.swift in Sources */,
 				107AE850251202980033F8C8 /* User.swift in Sources */,
+				10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */,
 				1028FDA925347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift in Sources */,
 				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
 				109A5F1C25178E950076007F /* Extensions.swift in Sources */,
@@ -455,6 +495,7 @@
 				10A4AC9325212D6D008D09BB /* PerformanceTableViewController.swift in Sources */,
 				10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */,
 				109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */,
+				109BCFBA2553215800D8A3D3 /* InstrumentDetailViewController.swift in Sources */,
 				10ADA8D125362410007576E7 /* Stock.swift in Sources */,
 				10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */,
 				1028FDAB25347F3A00DA9BC7 /* StocksCell.swift in Sources */,
@@ -470,6 +511,7 @@
 				105D4EE825247313006A0C6C /* Validation.swift in Sources */,
 				10E23F18250F930D0089D715 /* FantasyInvestorTests.swift in Sources */,
 				10ADA8D42536430A007576E7 /* loadTextFile.swift in Sources */,
+				109BCFBF255321E400D8A3D3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

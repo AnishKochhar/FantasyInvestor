@@ -11,11 +11,10 @@ import Foundation
 struct Portfolio {
     var prices: [String: Double]
     private var symbols = [String]()
-    let profit: Double
+    var balance: Double = 0.0
     
-    init(prices: [String: Double], profit: Double) {
+    init(prices: [String: Double]) {
         self.prices = prices
-        self.profit = profit
     }
     
     mutating func addInstrument(symbol: String, price: Double) {
@@ -26,6 +25,11 @@ struct Portfolio {
     func getSymbol(index: Int) -> String {
         return self.symbols[index]
     }
+    
+    mutating func setBalance(balance: Double) {
+        self.balance = balance
+    }
 }
 
+var portfolio: Portfolio = Portfolio(prices: [String: Double]())
 
