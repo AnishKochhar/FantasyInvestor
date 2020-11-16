@@ -25,7 +25,7 @@ class InstrumentDetailViewController: UIViewController {
     
     var stock: StockInfo?
     
-    var slideupView = UIView()
+    var slideupView = buyView()
     let slideupViewHeight: CGFloat = 300
     
     override func viewDidLoad() {
@@ -57,15 +57,12 @@ class InstrumentDetailViewController: UIViewController {
         slideupView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: slideupViewHeight)
         slideupView.translatesAutoresizingMaskIntoConstraints = false
         
-        let picker = UIPickerView()
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        slideupView.addSubview(picker)
-        
         view.addSubview(slideupView)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
             self.slideupView.frame = CGRect(x: 0, y: screenSize.height - self.slideupViewHeight, width: screenSize.width, height: self.slideupViewHeight)
-            }, completion: nil)
+            self.view.backgroundColor = .lightGray
+        }, completion: nil)
         
     }
     

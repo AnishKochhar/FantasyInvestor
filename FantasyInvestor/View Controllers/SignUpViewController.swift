@@ -38,7 +38,8 @@ class SignUpViewController: UIViewController {
     func loadDashboard() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let dashboardViewController = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-        UIApplication.shared.windows[0].rootViewController = dashboardViewController
+        UIApplication.shared.windows.first?.rootViewController = dashboardViewController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
     
     @objc func tapDone(sender: Any) {
