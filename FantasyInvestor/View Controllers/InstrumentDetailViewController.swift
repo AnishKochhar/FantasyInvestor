@@ -55,7 +55,6 @@ class InstrumentDetailViewController: UIViewController {
     @IBAction func buyPressed(_ sender: Any) {
         let screenSize = view.bounds.size
         slideupView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: slideupViewHeight)
-        slideupView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(slideupView)
         
