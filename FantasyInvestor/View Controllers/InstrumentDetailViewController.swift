@@ -26,7 +26,7 @@ class InstrumentDetailViewController: UIViewController {
     var stock: StockInfo?
     
     var slideupView = buyView()
-    let slideupViewHeight: CGFloat = 300
+    let slideupViewHeight: CGFloat = 315
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +66,11 @@ class InstrumentDetailViewController: UIViewController {
     }
     
     @IBAction func sellPressed(_ sender: Any) {
+    }
+    
+    // MARK: Button Action
+    @objc func confirm () {
+        
     }
 }
 

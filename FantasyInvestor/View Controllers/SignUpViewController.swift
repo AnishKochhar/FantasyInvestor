@@ -78,6 +78,7 @@ class SignUpViewController: UIViewController {
         portfolio["User"] = userID
         portfolio["Instruments"] = ["Apple", "Amazon"]
         portfolio["Prices"] = [111.90, 1034.32]
+        portfolio["Balance"] = 1000000
         
         portfolio.saveInBackground { (success, error) in
             if !success {
