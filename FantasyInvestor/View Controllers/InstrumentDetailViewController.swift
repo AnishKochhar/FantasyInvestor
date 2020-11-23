@@ -53,6 +53,7 @@ class InstrumentDetailViewController: UIViewController {
     }
     
     @IBAction func buyPressed(_ sender: Any) {
+        slideupView.stock = self.stock
         let screenSize = view.bounds.size
         slideupView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: slideupViewHeight)
         
@@ -63,14 +64,22 @@ class InstrumentDetailViewController: UIViewController {
             self.view.backgroundColor = .lightGray
         }, completion: nil)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func sellPressed(_ sender: Any) {
     }
     
-    // MARK: Button Action
-    @objc func confirm () {
+    
+    // MARK: Objc func
+    @objc func dismissView() {
+        let screenSize = view.bounds.size
         
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
+            self.slideupView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideupViewHeight)
+            self.view.backgroundColor = .systemBackground
+        }, completion: nil)
     }
 }
 

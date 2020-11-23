@@ -9,16 +9,16 @@
 import Foundation
 
 struct Portfolio {
-    var prices: [String: Double]
+    var prices: [String: (Double, Double)]
     private var symbols = [String]()
     var balance: Double = 0.0
     
-    init(prices: [String: Double]) {
+    init(prices: [String: (Double, Double)]) {
         self.prices = prices
     }
     
-    mutating func addInstrument(symbol: String, price: Double) {
-        prices.updateValue(price, forKey: symbol)
+    mutating func addInstrument(symbol: String, price: Double, amount: Double) {
+        prices.updateValue((price, amount), forKey: symbol)
         symbols.append(symbol)
     }
     
@@ -31,5 +31,5 @@ struct Portfolio {
     }
 }
 
-var portfolio: Portfolio = Portfolio(prices: [String: Double]())
+var portfolio: Portfolio = Portfolio(prices: [String: (Double, Double)]())
 

@@ -93,10 +93,11 @@ extension DashboardViewController {
         let userPortfolio = objects[0]
         let instruments = userPortfolio["Instruments"] as! [String]
         let prices = userPortfolio["Prices"] as! [Double]
+        let volumes = userPortfolio["Volumes"] as! [Double]
         let balance = userPortfolio["Balance"] as! Double
         assert(instruments.count == prices.count)
         for i in 0 ..< instruments.count {
-            portfolio.addInstrument(symbol: instruments[i], price: prices[i])
+            portfolio.addInstrument(symbol: instruments[i], price: prices[i], amount: volumes[i])
         }
         portfolio.setBalance(balance: balance)
         
@@ -130,7 +131,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         }
         let symbol = portfolio.getSymbol(index: index)
         cell.instrumentLabel.text = symbol
-        cell.priceLabel.text = "$\(portfolio.prices[symbol]!)"
+        cell.priceLabel.text = "$\(portfolio.prices[symbol]!.0)"
         
         return cell
     }

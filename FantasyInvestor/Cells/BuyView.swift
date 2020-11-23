@@ -11,6 +11,8 @@ import UIKit
 class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let numberFormatter = NumberFormatter()
+    var amount = portfolio.balance * 0.1
+    var stock: StockInfo?
 
     lazy var pickerView: UIPickerView = {
         let picker = UIPickerView()
@@ -20,11 +22,12 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     lazy var buttonView: UIButton = {
         let button = UIButton()
-        let amount = numberFormatter.string(from: NSNumber(value: portfolio.balance * 0.1))!
-        button.setTitle("Buy $\(amount)", for: .normal)
+        let amountString = numberFormatter.string(from: NSNumber(value: amount))!
+        button.setTitle("Buy $\(amountString)", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 22)
         button.titleLabel?.textAlignment = .center
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buyStock), for: .touchUpInside)
         return button
     }()
     
@@ -47,6 +50,10 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         return label
     }()
     
+    @objc func buyStock() {
+        guard let name = stock?.name else { return }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -59,6 +66,7 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func setupView() {
         numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 2
         
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -79,7 +87,7 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
             labelView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10),
             labelView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 10),
 //            labelView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -10),
-            labelView.heightAnchor.constraint(equalToConstant: 50),
+//            labelView.heightAnchor.constraint(equalToConstant: 50),
 
             pickerView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor),
             pickerView.topAnchor.constraint(equalTo: labelView.bottomAnchor),
@@ -131,27 +139,29 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (row == 0) {
-            let amount = numberFormatter.string(from: NSNumber(value: portfolio.balance * 0.02))!
-            buttonView.setTitle("Buy $\(amount)", for: .normal)
-            
+            amount = portfolio.balance * 0.02
+            let amountString = numberFormatter.string(from: NSNumber(value: amount))!
+            buttonView.setTitle("Buy $\(amountString)", for: .normal)
         }
         if (row == 1) {
-            let amount = numberFormatter.string(from: NSNumber(value: portfolio.balance * 0.05))!
-            buttonView.setTitle("Buy $\(amount)", for: .normal)
-            
+            amount = portfolio.balance * 0.05
+            let amountString = numberFormatter.string(from: NSNumber(value: amount))!
+            buttonView.setTitle("Buy $\(amountString)", for: .normal)
         }
         if (row == 2) {
-            let amount = numberFormatter.string(from: NSNumber(value: portfolio.balance * 0.1))!
-            buttonView.setTitle("Buy $\(amount)", for: .normal)
-            
+            amount = portfolio.balance * 0.1
+            let amountString = numberFormatter.string(from: NSNumber(value: amount))!
+            buttonView.setTitle("Buy $\(amountString)", for: .normal)
         }
         if (row == 3) {
-            let amount = numberFormatter.string(from: NSNumber(value: portfolio.balance * 0.15))!
-            buttonView.setTitle("Buy $\(amount)", for: .normal)
+            amount = portfolio.balance * 0.15
+            let amountString = numberFormatter.string(from: NSNumber(value: amount))!
+            buttonView.setTitle("Buy $\(amountString)", for: .normal)
         }
         if (row == 4) {
-            let amount = numberFormatter.string(from: NSNumber(value: portfolio.balance * 0.2))!
-            buttonView.setTitle("Buy $\(amount)", for: .normal)
+            amount = portfolio.balance * 0.2
+            let amountString = numberFormatter.string(from: NSNumber(value: amount))!
+            buttonView.setTitle("Buy $\(amountString)", for: .normal)
             
         }
     }
