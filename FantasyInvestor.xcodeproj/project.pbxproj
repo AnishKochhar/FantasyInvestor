@@ -23,6 +23,7 @@
 		10ADA8D42536430A007576E7 /* loadTextFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ADA8D225363B1E007576E7 /* loadTextFile.swift */; };
 		10B088DA2518C1A400B63237 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088D92518C1A400B63237 /* Validation.swift */; };
 		10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088DB2518C7C800B63237 /* Portfolio.swift */; };
+		10B4A21625751ECC00A14D60 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4A21525751ECC00A14D60 /* SellView.swift */; };
 		10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F00250F930A0089D715 /* AppDelegate.swift */; };
 		10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F02250F930A0089D715 /* SceneDelegate.swift */; };
 		10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F04250F930A0089D715 /* SignUpViewController.swift */; };
@@ -68,6 +69,7 @@
 		10ADA8D225363B1E007576E7 /* loadTextFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadTextFile.swift; sourceTree = "<group>"; };
 		10B088D92518C1A400B63237 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		10B088DB2518C7C800B63237 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		10B4A21525751ECC00A14D60 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
 		10E23EFD250F930A0089D715 /* FantasyInvestor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyInvestor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F00250F930A0089D715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E23F02250F930A0089D715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				10F15FB72561DE08001AC8F4 /* BuyView.swift */,
+				10B4A21525751ECC00A14D60 /* SellView.swift */,
 				1028FDAA25347F3A00DA9BC7 /* StocksCell.swift */,
 				1063894D251A671C00223CA3 /* DashboardTableCells.swift */,
 			);
@@ -486,6 +489,7 @@
 			files = (
 				10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */,
 				1063894C251A631A00223CA3 /* DashboardViewController.swift in Sources */,
+				10B4A21625751ECC00A14D60 /* SellView.swift in Sources */,
 				107AE850251202980033F8C8 /* User.swift in Sources */,
 				10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */,
 				1028FDA925347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift in Sources */,

@@ -25,7 +25,8 @@ class InstrumentDetailViewController: UIViewController {
     
     var stock: StockInfo?
     
-    var slideupView = buyView()
+    var slideupBuyView = buyView()
+    var slideupSellView: sellView?
     let slideupViewHeight: CGFloat = 315
     
     override func viewDidLoad() {
@@ -53,14 +54,14 @@ class InstrumentDetailViewController: UIViewController {
     }
     
     @IBAction func buyPressed(_ sender: Any) {
-        slideupView.stock = self.stock
+        slideupBuyView.stock = self.stock
         let screenSize = view.bounds.size
-        slideupView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: slideupViewHeight)
+        slideupBuyView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: slideupViewHeight)
         
-        view.addSubview(slideupView)
+        view.addSubview(slideupBuyView)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
-            self.slideupView.frame = CGRect(x: 0, y: screenSize.height - self.slideupViewHeight, width: screenSize.width, height: self.slideupViewHeight)
+            self.slideupBuyView.frame = CGRect(x: 0, y: screenSize.height - self.slideupViewHeight, width: screenSize.width, height: self.slideupViewHeight)
             self.view.backgroundColor = .lightGray
         }, completion: nil)
         
@@ -69,6 +70,21 @@ class InstrumentDetailViewController: UIViewController {
     }
     
     @IBAction func sellPressed(_ sender: Any) {
+        slideupSellView = sellView()
+        slideupSellView!.stock = self.stock
+        slideupSellView!.setupView()
+        let screenSize = view.bounds.size
+        slideupSellView!.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: slideupViewHeight)
+        
+        view.addSubview(slideupSellView!)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
+            self.slideupSellView!.frame = CGRect(x: 0, y: screenSize.height - self.slideupViewHeight, width: screenSize.width, height: self.slideupViewHeight)
+            self.view.backgroundColor = .lightGray
+        }, completion: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        view.addGestureRecognizer(tapGesture)
     }
     
     
@@ -77,7 +93,8 @@ class InstrumentDetailViewController: UIViewController {
         let screenSize = view.bounds.size
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
-            self.slideupView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideupViewHeight)
+            self.slideupBuyView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideupViewHeight)
+            self.slideupSellView!.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideupViewHeight)
             self.view.backgroundColor = .systemBackground
         }, completion: nil)
     }

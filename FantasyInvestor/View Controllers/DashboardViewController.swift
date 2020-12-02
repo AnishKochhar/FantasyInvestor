@@ -20,11 +20,15 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var balanceBackgroundView: UIView!
     
     var distanceBetweenLineViewAndBalanceLabel: CGFloat = 0
+    let formatter = NumberFormatter()
     
     let currentUserID = PFUser.current()!.objectId!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
         
         getPortfolio()
         
@@ -54,7 +58,10 @@ class DashboardViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        self.tableView.reloadData()
+        self.displayBalance()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,14 +102,16 @@ extension DashboardViewController {
         let prices = userPortfolio["Prices"] as! [Double]
         let volumes = userPortfolio["Volumes"] as! [Double]
         let balance = userPortfolio["Balance"] as! Double
+        let id = userPortfolio["User"] as! String
         assert(instruments.count == prices.count)
         for i in 0 ..< instruments.count {
             portfolio.addInstrument(symbol: instruments[i], price: prices[i], amount: volumes[i])
         }
         portfolio.setBalance(balance: balance)
+        portfolio.setId(id: id)
         
         self.tableView.reloadData()
-        self.balanceLabel.text = "Balance: \(portfolio.balance)"
+        self.displayBalance()
     }
     
     func displayErrorMessage(message: String) {
@@ -114,6 +123,11 @@ extension DashboardViewController {
             presenter.sourceRect = self.view.bounds
         }
         self.present(alertView, animated: true, completion: nil)
+    }
+    
+    func displayBalance() {
+        let balanceString = formatter.string(from: NSNumber(value: portfolio.balance))!
+        self.balanceLabel.text = "Balance: $\(balanceString)"
     }
 }
 

@@ -51,7 +51,25 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     }()
     
     @objc func buyStock() {
-        guard let name = stock?.name else { return }
+        guard let symbol = stock?.symbol else { return }
+        guard let price = stock?.currentPrice else { return }
+        
+        if (!portfolio.checkIfExists(target: symbol)) { displayMessage(title: "Error!", message: "Stock already exists in your portfolio!"); return }
+        
+        portfolio.buyInstrument(symbol: symbol, price: price, amount: amount / price)
+//        portfolio.updatePortfolio()
+        displayMessage(title: "Success!", message: "You have bought $\(amount) of \(symbol)!")
+    }
+    
+    func displayMessage(title: String, message: String) {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        alertView.addAction(OKAction)
+        if let presenter = alertView.popoverPresentationController {
+            presenter.sourceView = self
+            presenter.sourceRect = self.bounds
+        }
+        window?.rootViewController?.present(alertView, animated: true, completion: nil)
     }
     
     override init(frame: CGRect) {
@@ -72,7 +90,7 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         pickerView.delegate = self
         pickerView.selectRow(2, inComponent: 0, animated: false)
         
-        backgroundColor = .orange
+        backgroundColor = .magenta
         addSubview(pickerView)
         addSubview(labelView)
         addSubview(buttonView)
