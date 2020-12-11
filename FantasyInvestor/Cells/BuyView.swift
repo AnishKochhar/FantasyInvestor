@@ -33,7 +33,8 @@ class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
     
     lazy var labelView: UILabel = {
         let label = UILabel()
-        label.text = "Cash: $\(portfolio.balance)"
+        let balanceString = numberFormatter.string(from: NSNumber(value: portfolio.balance))!
+        label.text = "Cash: $\(balanceString)"
         label.font = .systemFont(ofSize: 20, weight: .light)
         label.numberOfLines = 0
         label.textAlignment = .center

@@ -35,6 +35,8 @@ struct Portfolio {
         prices.removeValue(forKey: symbol)
         self.balance += (value)
         
+        self.symbols = symbols.filter { $0 != symbol }
+        
         self.updatePortfolio()
     }
     

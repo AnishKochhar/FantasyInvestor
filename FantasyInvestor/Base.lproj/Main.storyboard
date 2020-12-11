@@ -507,7 +507,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWB-Qp-COU" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="22" y="197" width="370" height="261"/>
+                                <rect key="frame" x="22" y="197" width="370" height="220"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -606,6 +606,19 @@
                                     <action selector="sellPressed:" destination="I8K-C9-qZV" eventType="touchUpInside" id="Sus-V2-uKe"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-Jg-fJs">
+                                <rect key="frame" x="67" y="425" width="280" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Day"/>
+                                    <segment title="Week"/>
+                                    <segment title="Year"/>
+                                    <segment title="5 Years"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentPressed:" destination="I8K-C9-qZV" eventType="valueChanged" id="BQG-qz-BNe"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="I4O-v4-PaC"/>
@@ -619,6 +632,7 @@
                         <outlet property="lineChart" destination="QWB-Qp-COU" id="QBZ-jT-V6s"/>
                         <outlet property="marketCapLabel" destination="TRs-YJ-BBa" id="3E6-6X-k7t"/>
                         <outlet property="priceLabel" destination="8Is-eO-Ypg" id="vuA-cU-hSc"/>
+                        <outlet property="segmentedControl" destination="xAK-Jg-fJs" id="ofZ-Vn-MBd"/>
                         <outlet property="sellButton" destination="IhT-3H-4X7" id="sNf-Xn-77E"/>
                         <outlet property="symbolLabel" destination="Tro-zA-M3D" id="HDz-yH-7cq"/>
                     </connections>

@@ -19,6 +19,7 @@ class InstrumentDetailViewController: UIViewController {
     @IBOutlet weak var descriptionBoxLabel: UILabel!
     
     @IBOutlet weak var lineChart: LineChartView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var sellButton: UIButton!
@@ -53,6 +54,23 @@ class InstrumentDetailViewController: UIViewController {
         sellButton.layer.cornerRadius = 4
     }
     
+    @IBAction func segmentPressed(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            print("Day")
+            // Load the 5 min data from the txt file
+        case 1:
+            print("Week")
+            // Load the 30 min data from the txt file
+        case 2:
+            print("Year")
+            // Load the daily data from the txt file
+        default:
+            print("5 year")
+            // Load the weekly data from the txt file
+        }
+    }
+    
     @IBAction func buyPressed(_ sender: Any) {
         slideupBuyView.stock = self.stock
         let screenSize = view.bounds.size
@@ -65,7 +83,7 @@ class InstrumentDetailViewController: UIViewController {
             self.view.backgroundColor = .lightGray
         }, completion: nil)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissBuyView))
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -83,20 +101,27 @@ class InstrumentDetailViewController: UIViewController {
             self.view.backgroundColor = .lightGray
         }, completion: nil)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissSellView))
         view.addGestureRecognizer(tapGesture)
     }
     
     
     // MARK: Objc func
-    @objc func dismissView() {
+    @objc func dismissBuyView() {
         let screenSize = view.bounds.size
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
             self.slideupBuyView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideupViewHeight)
+            self.view.backgroundColor = .systemBackground
+        }, completion: nil)
+    }
+    
+    @objc func dismissSellView() {
+        let screenSize = view.bounds.size
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseOut, animations: {
             self.slideupSellView!.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.slideupViewHeight)
             self.view.backgroundColor = .systemBackground
         }, completion: nil)
     }
 }
-
