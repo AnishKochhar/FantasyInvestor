@@ -17,6 +17,7 @@ class InstrumentDetailViewController: UIViewController {
     @IBOutlet weak var marketCapLabel: UILabel!
     @IBOutlet weak var foundedLabel: UILabel!
     @IBOutlet weak var descriptionBoxLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -25,6 +26,9 @@ class InstrumentDetailViewController: UIViewController {
     @IBOutlet weak var sellButton: UIButton!
     
     var stock: StockInfo?
+    var dataKeyValues = [(key: String, value: TimeSeries)]()
+    
+    var textFileLoader: loadTextFile?
     
     var slideupBuyView = buyView()
     var slideupSellView: sellView?
@@ -42,7 +46,12 @@ class InstrumentDetailViewController: UIViewController {
             descriptionBoxLabel.text = stock.description
         }
         
+        textFileLoader = loadTextFile()
+        textFileLoader?.delegate = self
+        textFileLoader?.loadYearData()
+        
         setupButtons()
+        setupGraph()
     }
     
     func setupButtons() {
@@ -70,6 +79,93 @@ class InstrumentDetailViewController: UIViewController {
             // Load the weekly data from the txt file
         }
     }
+    
+    
+}
+
+// MARK: textFileDownloadDelegate
+extension InstrumentDetailViewController: textFileDownloadDelegate {
+    
+    func didFinishDownloading(_ sender: loadTextFile) {
+        // loop through the responses, and find the one that matches the current stock
+        for response in sender.responseDaily! {
+            if (response.symbol == self.stock?.symbol) {
+                self.dataKeyValues = response.timeSeriesDaily.sorted(by: { $0.key < $1.key })
+                self.dateLabel.text = self.dataKeyValues[self.dataKeyValues.count - 1].key
+                drawGraph(dataKeyValues: self.dataKeyValues)
+            }
+        }
+    }
+}
+
+// MARK: ChartViewDelegate + Graph Stuff
+extension InstrumentDetailViewController: ChartViewDelegate {
+    
+    func setupGraph() {
+        lineChart.delegate = self
+        
+        lineChart.backgroundColor = .clear
+        lineChart.drawGridBackgroundEnabled = false
+        lineChart.drawBordersEnabled = false
+        lineChart.leftAxis.drawGridLinesEnabled = false
+        lineChart.xAxis.drawGridLinesEnabled = false
+        lineChart.xAxis.drawAxisLineEnabled = false
+        lineChart.leftAxis.drawAxisLineEnabled = false
+        
+        lineChart.legend.enabled = false
+        
+        lineChart.rightAxis.enabled = false
+        lineChart.xAxis.labelCount = 0
+        lineChart.xAxis.labelTextColor = .clear
+        
+        lineChart.animate(xAxisDuration: 2)
+    }
+    
+    func drawGraph(dataKeyValues: [(key: String, value: TimeSeries)]) {
+        var dataSet = [ChartDataEntry]()
+        var i = 0
+        let baseValue = dataKeyValues[0].value.close
+        let finalValue = dataKeyValues[dataKeyValues.count - 1].value.close
+        let fillColour: UIColor = (baseValue < finalValue ? .green : .red)
+        let lineColour: UIColor = (baseValue < finalValue ? UIColor(red: 0, green: 215/255, blue: 0, alpha: 1) : UIColor(red: 240/255, green: 0, blue: 0, alpha: 1))
+        
+        for keyValue in dataKeyValues {
+            let value = ChartDataEntry(x: Double(i), y: Double(keyValue.value.close)!)
+            dataSet.append(value)
+            i += 1
+        }
+        
+        let set = LineChartDataSet(entries: dataSet)
+        set.drawCirclesEnabled = false
+        set.lineWidth = 3
+        set.setColor(lineColour, alpha: 0.8)
+        let gradientColors = [fillColour.cgColor, UIColor.clear.cgColor] as CFArray
+        let colorLocations: [CGFloat] = [0.3, 0.0]
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations)
+        set.fill = Fill.init(linearGradient: gradient!, angle: 90.0)
+        
+        set.drawFilledEnabled = true
+        set.drawValuesEnabled = true
+        set.valueTextColor = .black
+        
+        set.drawHorizontalHighlightIndicatorEnabled = false
+        set.highlightLineWidth = 1.5
+        set.highlightColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        let data = LineChartData(dataSet: set)
+        data.setDrawValues(true)
+        
+        lineChart.data = data
+    }
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        self.dateLabel.text = self.dataKeyValues[Int(entry.x)].key
+        priceLabel.text = "\(entry.y)"
+    }
+}
+
+// MARK: Buy / Sell Views
+extension InstrumentDetailViewController {
     
     @IBAction func buyPressed(_ sender: Any) {
         slideupBuyView.stock = self.stock
@@ -105,8 +201,6 @@ class InstrumentDetailViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    
-    // MARK: Objc func
     @objc func dismissBuyView() {
         let screenSize = view.bounds.size
         
@@ -125,3 +219,4 @@ class InstrumentDetailViewController: UIViewController {
         }, completion: nil)
     }
 }
+

@@ -507,7 +507,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QWB-Qp-COU" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="22" y="197" width="370" height="220"/>
+                                <rect key="frame" x="22" y="202" width="370" height="220"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -533,9 +533,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13.46" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Is-eO-Ypg">
-                                <rect key="frame" x="25" y="168" width="72" height="26"/>
+                                <rect key="frame" x="27" y="162" width="112" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -619,6 +619,13 @@
                                     <action selector="segmentPressed:" destination="I8K-C9-qZV" eventType="valueChanged" id="BQG-qz-BNe"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svf-gr-qup">
+                                <rect key="frame" x="147" y="167" width="108" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="I4O-v4-PaC"/>
@@ -626,6 +633,7 @@
                     <navigationItem key="navigationItem" id="osL-4o-9d8"/>
                     <connections>
                         <outlet property="buyButton" destination="904-DR-4zt" id="IFx-Re-fHb"/>
+                        <outlet property="dateLabel" destination="svf-gr-qup" id="IgL-Wq-0mN"/>
                         <outlet property="descriptionBoxLabel" destination="ezN-jX-zNA" id="aIH-bK-qGZ"/>
                         <outlet property="foundedLabel" destination="kOk-xy-gho" id="vCf-Ml-AGT"/>
                         <outlet property="instrumentNameLabel" destination="jXN-hL-Gvt" id="Hv0-VI-aYg"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101DFD1B258531410047EDA3 /* TimeSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DFD1A258531410047EDA3 /* TimeSeries.swift */; };
 		1028FDA925347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1028FDA825347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift */; };
 		1028FDAB25347F3A00DA9BC7 /* StocksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1028FDAA25347F3A00DA9BC7 /* StocksCell.swift */; };
 		105D4EE825247313006A0C6C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088D92518C1A400B63237 /* Validation.swift */; };
@@ -32,6 +33,7 @@
 		10E23F0D250F930D0089D715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E23F0B250F930D0089D715 /* LaunchScreen.storyboard */; };
 		10E23F18250F930D0089D715 /* FantasyInvestorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F17250F930D0089D715 /* FantasyInvestorTests.swift */; };
 		10E23F23250F930D0089D715 /* FantasyInvestorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */; };
+		10EE7EAF25878E4A004DED10 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE7EAE25878E4A004DED10 /* Response.swift */; };
 		10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15FB72561DE08001AC8F4 /* BuyView.swift */; };
 		1305BF4BAD4D7C4928E74FC3 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78B28FAE35418B2E4AAC83 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework */; };
 		EE02EE967AC69B3CFD03F6BD /* Pods_FantasyInvestorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */; };
@@ -56,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		101DFD1A258531410047EDA3 /* TimeSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSeries.swift; sourceTree = "<group>"; };
 		1028FDA825347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInstrumentsCollectionViewController.swift; sourceTree = "<group>"; };
 		1028FDAA25347F3A00DA9BC7 /* StocksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCell.swift; sourceTree = "<group>"; };
 		1063894B251A631A00223CA3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		10E23F1E250F930D0089D715 /* FantasyInvestorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FantasyInvestorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FantasyInvestorUITests.swift; sourceTree = "<group>"; };
 		10E23F24250F930D0089D715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10EE7EAE25878E4A004DED10 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		10F15FB72561DE08001AC8F4 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
 		1702179C7979FCCB9D0165FC /* Pods-FantasyInvestor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.debug.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.debug.xcconfig"; sourceTree = "<group>"; };
 		53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyInvestorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +144,8 @@
 		109BCFBC255321A100D8A3D3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				10EE7EAE25878E4A004DED10 /* Response.swift */,
+				101DFD1A258531410047EDA3 /* TimeSeries.swift */,
 				10ADA8D025362410007576E7 /* Stock.swift */,
 				107AE84F251202980033F8C8 /* User.swift */,
 				10B088DB2518C7C800B63237 /* Portfolio.swift */,
@@ -491,7 +497,9 @@
 				1063894C251A631A00223CA3 /* DashboardViewController.swift in Sources */,
 				10B4A21625751ECC00A14D60 /* SellView.swift in Sources */,
 				107AE850251202980033F8C8 /* User.swift in Sources */,
+				10EE7EAF25878E4A004DED10 /* Response.swift in Sources */,
 				10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */,
+				101DFD1B258531410047EDA3 /* TimeSeries.swift in Sources */,
 				1028FDA925347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift in Sources */,
 				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
 				109A5F1C25178E950076007F /* Extensions.swift in Sources */,
