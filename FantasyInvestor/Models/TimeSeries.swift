@@ -8,16 +8,17 @@
 
 import Foundation
 
-protocol TimeSeries: Codable {
+protocol TimeSeriesProtocol: Codable {
     var close: String { get }
 }
 
-struct TimeSeriesDaily: TimeSeries, Codable {
+struct TimeSeries: TimeSeriesProtocol, Codable {
     var close: String
     
     enum CodingKeys: String, CodingKey {
         case close = "4. close"
     }
 }
+
 
 

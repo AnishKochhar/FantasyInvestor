@@ -612,15 +612,15 @@
                                 <segments>
                                     <segment title="Day"/>
                                     <segment title="Week"/>
-                                    <segment title="Year"/>
+                                    <segment title="5 Months"/>
                                     <segment title="5 Years"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentPressed:" destination="I8K-C9-qZV" eventType="valueChanged" id="BQG-qz-BNe"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svf-gr-qup">
-                                <rect key="frame" x="147" y="167" width="108" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svf-gr-qup">
+                                <rect key="frame" x="155" y="156" width="122" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

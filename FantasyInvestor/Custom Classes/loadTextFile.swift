@@ -17,7 +17,18 @@ class loadTextFile {
     
     var stocks: [StockInfo]?
     var responseDaily: [ResponseDaily]?
+    var responseWeekly: [ResponseWeekly]?
+    var response5min: [Response5min]?
+    var response30min: [Response30min]?
     var delegate: textFileDownloadDelegate?
+    
+//    init() {
+//        self.stocks = textFileLoader.stocks
+//        self.responseDaily = textFileLoader.responseDaily
+//        self.responseWeekly = textFileLoader.responseWeekly
+//        self.response5min = textFileLoader.response5min
+//        self.response30min = textFileLoader.response30min
+//    }
     
     func downloadTextFile(name: String) {
         let query = PFQuery(className: "TextFiles")
@@ -43,9 +54,23 @@ class loadTextFile {
                     case "Instruments.txt":
                         let stocks = try JSONDecoder().decode([StockInfo].self, from: fileData)
                         self.stocks = stocks
+                        textFileLoader.stocks = stocks
                     case "1day.txt":
                         let responseDaily = try JSONDecoder().decode([ResponseDaily].self, from: fileData)
                         self.responseDaily = responseDaily
+                        textFileLoader.responseDaily = responseDaily
+                    case "1week.txt" :
+                        let responseWeekly = try JSONDecoder().decode([ResponseWeekly].self, from: fileData)
+                        self.responseWeekly = responseWeekly
+                        textFileLoader.responseWeekly = responseWeekly
+                    case "5min.txt" :
+                        let response5min = try JSONDecoder().decode([Response5min].self, from: fileData)
+                        self.response5min = response5min
+                        textFileLoader.response5min = response5min
+                    case "30min.txt" :
+                        let response30min = try JSONDecoder().decode([Response30min].self, from: fileData)
+                        self.response30min = response30min
+                        textFileLoader.response30min = response30min
                     default:
                         return
                     }
@@ -71,6 +96,30 @@ class loadTextFile {
     func loadYearData() {
         if (self.responseDaily == nil) {
             self.downloadTextFile(name: "1day.txt")
+        } else {
+            self.didFinishDownload()
+        }
+    }
+    
+    func load5YearData() {
+        if (self.responseWeekly == nil) {
+            self.downloadTextFile(name: "1week.txt")
+        } else {
+            self.didFinishDownload()
+        }
+    }
+    
+    func loadDayData() {
+        if (self.response5min == nil) {
+            self.downloadTextFile(name: "5min.txt")
+        } else {
+            self.didFinishDownload()
+        }
+    }
+    
+    func loadWeekData() {
+        if (self.response30min == nil) {
+            self.downloadTextFile(name: "30min.txt")
         } else {
             self.didFinishDownload()
         }

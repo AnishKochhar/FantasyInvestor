@@ -26,7 +26,8 @@ class InstrumentDetailViewController: UIViewController {
     @IBOutlet weak var sellButton: UIButton!
     
     var stock: StockInfo?
-    var dataKeyValues = [(key: String, value: TimeSeries)]()
+    var dataKeyValues = [(key: String, value: TimeSeriesProtocol)]()
+    var currentTimeFrame = 2
     
     var textFileLoader: loadTextFile?
     
@@ -66,20 +67,19 @@ class InstrumentDetailViewController: UIViewController {
     @IBAction func segmentPressed(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            print("Day")
-            // Load the 5 min data from the txt file
+            currentTimeFrame = 0
+            textFileLoader?.loadDayData()
         case 1:
-            print("Week")
-            // Load the 30 min data from the txt file
+            currentTimeFrame = 1
+            textFileLoader?.loadWeekData()
         case 2:
-            print("Year")
-            // Load the daily data from the txt file
+            currentTimeFrame = 2
+            textFileLoader?.loadYearData()
         default:
-            print("5 year")
-            // Load the weekly data from the txt file
+            currentTimeFrame = 3
+            textFileLoader?.load5YearData()
         }
     }
-    
     
 }
 
@@ -88,11 +88,38 @@ extension InstrumentDetailViewController: textFileDownloadDelegate {
     
     func didFinishDownloading(_ sender: loadTextFile) {
         // loop through the responses, and find the one that matches the current stock
-        for response in sender.responseDaily! {
-            if (response.symbol == self.stock?.symbol) {
-                self.dataKeyValues = response.timeSeriesDaily.sorted(by: { $0.key < $1.key })
-                self.dateLabel.text = self.dataKeyValues[self.dataKeyValues.count - 1].key
-                drawGraph(dataKeyValues: self.dataKeyValues)
+        switch (currentTimeFrame) {
+        case 0:
+            for response in sender.response5min! {
+                if (response.symbol == self.stock?.symbol) {
+                    self.dataKeyValues = response.timeSeries5min.sorted(by: { $0.key < $1.key })
+                    self.dateLabel.text = self.dataKeyValues[self.dataKeyValues.count - 1].key
+                    drawGraph(dataKeyValues: self.dataKeyValues)
+                }
+            }
+        case 1:
+            for response in sender.response30min! {
+                if (response.symbol == self.stock?.symbol) {
+                    self.dataKeyValues = response.timeSeries30min.sorted(by: { $0.key < $1.key })
+                    self.dateLabel.text = self.dataKeyValues[self.dataKeyValues.count - 1].key
+                    drawGraph(dataKeyValues: self.dataKeyValues)
+                }
+            }
+        case 2:
+            for response in sender.responseDaily! {
+                if (response.symbol == self.stock?.symbol) {
+                    self.dataKeyValues = response.timeSeriesDaily.sorted(by: { $0.key < $1.key })
+                    self.dateLabel.text = self.dataKeyValues[self.dataKeyValues.count - 1].key
+                    drawGraph(dataKeyValues: self.dataKeyValues)
+                }
+            }
+        default:
+            for response in sender.responseWeekly! {
+                if (response.symbol == self.stock?.symbol) {
+                    self.dataKeyValues = response.timeSeriesWeekly.sorted(by: { $0.key < $1.key })
+                    self.dateLabel.text = self.dataKeyValues[self.dataKeyValues.count - 1].key
+                    drawGraph(dataKeyValues: self.dataKeyValues)
+                }
             }
         }
     }
@@ -121,7 +148,7 @@ extension InstrumentDetailViewController: ChartViewDelegate {
         lineChart.animate(xAxisDuration: 2)
     }
     
-    func drawGraph(dataKeyValues: [(key: String, value: TimeSeries)]) {
+    func drawGraph(dataKeyValues: [(key: String, value: TimeSeriesProtocol)]) {
         var dataSet = [ChartDataEntry]()
         var i = 0
         let baseValue = dataKeyValues[0].value.close
@@ -156,6 +183,7 @@ extension InstrumentDetailViewController: ChartViewDelegate {
         data.setDrawValues(true)
         
         lineChart.data = data
+        lineChart.animate(xAxisDuration: 2)
     }
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
