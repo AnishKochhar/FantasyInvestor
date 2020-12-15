@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="200.00000000000003" y="128.57142857142856"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Dashboard-->
         <scene sceneID="qZa-1J-etm">
             <objects>
                 <viewController storyboardIdentifier="DashboardViewController" id="H33-yZ-Qpx" customClass="DashboardViewController" customModule="FantasyInvestor" customModuleProvider="target" sceneMemberID="viewController">
@@ -254,7 +254,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3TR-Cm-3Bi"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="3Je-PS-6g2"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" selectedImage="calendar" catalog="system" id="3Je-PS-6g2"/>
                     <navigationItem key="navigationItem" id="GfF-oS-TCo"/>
                     <connections>
                         <outlet property="balanceBackgroundView" destination="3W2-9u-rbV" id="Kuw-n8-SU1"/>
@@ -416,12 +416,93 @@
             </objects>
             <point key="canvasLocation" x="1066.6666666666667" y="128.57142857142856"/>
         </scene>
+        <!--Leagues-->
+        <scene sceneID="8l2-IV-bst">
+            <objects>
+                <viewController id="Eew-LD-Aam" customClass="LeaguesViewController" customModule="FantasyInvestor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sK3-Uy-l8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LM-Ur-9g7">
+                                <rect key="frame" x="269" y="124" width="118" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Create League">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dr-iq-cVo">
+                                <rect key="frame" x="289" y="176" width="98" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Join League">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Leagues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DC9-6H-2CM">
+                                <rect key="frame" x="20" y="258" width="169" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mwB-Km-xaj">
+                                <rect key="frame" x="20" y="310" width="374" height="431"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagueCell" rowHeight="77" id="zzA-Wk-heS" customClass="LeagueTableViewCell" customModule="FantasyInvestor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zzA-Wk-heS" id="EJT-TI-9bd">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhz-g2-MW2">
+                                                    <rect key="frame" x="289" y="27" width="61" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="League Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAf-n4-59n">
+                                                    <rect key="frame" x="20" y="19" width="169" height="38"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leagueName" destination="aAf-n4-59n" id="xNQ-LC-xie"/>
+                                            <outlet property="leaguePosition" destination="bhz-g2-MW2" id="5oY-nL-NIM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="FU3-2d-FqE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Leagues" id="xEv-fS-BMK"/>
+                    <connections>
+                        <outlet property="leagueTableView" destination="mwB-Km-xaj" id="cMW-tR-aj9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOE-tD-OMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110.144927536232" y="2320.9821428571427"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lVF-gk-iQx">
             <objects>
                 <tabBarController storyboardIdentifier="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="1Wv-Cc-WMn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yTI-nI-i6j">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backgroundImage="pencil" catalog="system" id="yTI-nI-i6j">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -429,6 +510,7 @@
                     <connections>
                         <segue destination="H33-yZ-Qpx" kind="relationship" relationship="viewControllers" id="Duz-mL-AYc"/>
                         <segue destination="iVO-f0-dfS" kind="relationship" relationship="viewControllers" id="23H-00-VPS"/>
+                        <segue destination="4uI-6k-Ysg" kind="relationship" relationship="viewControllers" id="g8j-cB-oaR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8a-6f-X7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -649,11 +731,13 @@
             </objects>
             <point key="canvasLocation" x="2053.6231884057975" y="1579.6875"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Stocks-->
         <scene sceneID="oMF-Hw-Ma8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iVO-f0-dfS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="search" id="BXt-8t-iKY"/>
+                    <tabBarItem key="tabBarItem" title="Stocks" selectedImage="chart.bar.fill" catalog="system" id="BXt-8t-iKY">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2PI-0z-6F1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -668,5 +752,30 @@
             </objects>
             <point key="canvasLocation" x="200.00000000000003" y="1579.6875"/>
         </scene>
+        <!--Leagues-->
+        <scene sceneID="FJu-MG-iu2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4uI-6k-Ysg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Leagues" selectedImage="person.3.fill" catalog="system" id="mhN-Qz-BRo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gtv-2P-lEJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eew-LD-Aam" kind="relationship" relationship="rootViewController" id="BVD-8H-Fc9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cHY-ug-sIX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200.00000000000003" y="2320.9821428571427"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+    </resources>
 </document>

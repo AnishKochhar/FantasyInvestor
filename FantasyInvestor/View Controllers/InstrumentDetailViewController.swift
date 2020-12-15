@@ -151,8 +151,8 @@ extension InstrumentDetailViewController: ChartViewDelegate {
     func drawGraph(dataKeyValues: [(key: String, value: TimeSeriesProtocol)]) {
         var dataSet = [ChartDataEntry]()
         var i = 0
-        let baseValue = dataKeyValues[0].value.close
-        let finalValue = dataKeyValues[dataKeyValues.count - 1].value.close
+        let baseValue = Double(dataKeyValues[0].value.close)!
+        let finalValue = Double(dataKeyValues[dataKeyValues.count - 1].value.close)!
         let fillColour: UIColor = (baseValue < finalValue ? .green : .red)
         let lineColour: UIColor = (baseValue < finalValue ? UIColor(red: 0, green: 215/255, blue: 0, alpha: 1) : UIColor(red: 240/255, green: 0, blue: 0, alpha: 1))
         
@@ -180,7 +180,7 @@ extension InstrumentDetailViewController: ChartViewDelegate {
         set.highlightColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
         let data = LineChartData(dataSet: set)
-        data.setDrawValues(true)
+        data.setDrawValues(false)
         
         lineChart.data = data
         lineChart.animate(xAxisDuration: 2)

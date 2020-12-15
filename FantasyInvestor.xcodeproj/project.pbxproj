@@ -25,6 +25,9 @@
 		10B088DA2518C1A400B63237 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088D92518C1A400B63237 /* Validation.swift */; };
 		10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B088DB2518C7C800B63237 /* Portfolio.swift */; };
 		10B4A21625751ECC00A14D60 /* SellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B4A21525751ECC00A14D60 /* SellView.swift */; };
+		10D524582589749200314D3B /* LeaguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D524572589749200314D3B /* LeaguesViewController.swift */; };
+		10D5245A2589755000314D3B /* LeagueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D524592589755000314D3B /* LeagueTableViewCell.swift */; };
+		10D5245C258975D000314D3B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D5245B258975D000314D3B /* League.swift */; };
 		10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F00250F930A0089D715 /* AppDelegate.swift */; };
 		10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F02250F930A0089D715 /* SceneDelegate.swift */; };
 		10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F04250F930A0089D715 /* SignUpViewController.swift */; };
@@ -73,6 +76,9 @@
 		10B088D92518C1A400B63237 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		10B088DB2518C7C800B63237 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		10B4A21525751ECC00A14D60 /* SellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellView.swift; sourceTree = "<group>"; };
+		10D524572589749200314D3B /* LeaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewController.swift; sourceTree = "<group>"; };
+		10D524592589755000314D3B /* LeagueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableViewCell.swift; sourceTree = "<group>"; };
+		10D5245B258975D000314D3B /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		10E23EFD250F930A0089D715 /* FantasyInvestor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FantasyInvestor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E23F00250F930A0089D715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10E23F02250F930A0089D715 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				1063894B251A631A00223CA3 /* DashboardViewController.swift */,
 				1028FDA825347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift */,
 				109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */,
+				10D524572589749200314D3B /* LeaguesViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 				10ADA8D025362410007576E7 /* Stock.swift */,
 				107AE84F251202980033F8C8 /* User.swift */,
 				10B088DB2518C7C800B63237 /* Portfolio.swift */,
+				10D5245B258975D000314D3B /* League.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 				10B4A21525751ECC00A14D60 /* SellView.swift */,
 				1028FDAA25347F3A00DA9BC7 /* StocksCell.swift */,
 				1063894D251A671C00223CA3 /* DashboardTableCells.swift */,
+				10D524592589755000314D3B /* LeagueTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -499,6 +508,7 @@
 				107AE850251202980033F8C8 /* User.swift in Sources */,
 				10EE7EAF25878E4A004DED10 /* Response.swift in Sources */,
 				10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */,
+				10D5245C258975D000314D3B /* League.swift in Sources */,
 				101DFD1B258531410047EDA3 /* TimeSeries.swift in Sources */,
 				1028FDA925347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift in Sources */,
 				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
@@ -510,6 +520,8 @@
 				109BCFBA2553215800D8A3D3 /* InstrumentDetailViewController.swift in Sources */,
 				10ADA8D125362410007576E7 /* Stock.swift in Sources */,
 				10E23F03250F930A0089D715 /* SceneDelegate.swift in Sources */,
+				10D524582589749200314D3B /* LeaguesViewController.swift in Sources */,
+				10D5245A2589755000314D3B /* LeagueTableViewCell.swift in Sources */,
 				1028FDAB25347F3A00DA9BC7 /* StocksCell.swift in Sources */,
 				10B088DA2518C1A400B63237 /* Validation.swift in Sources */,
 				10ADA8D325363B1E007576E7 /* loadTextFile.swift in Sources */,
