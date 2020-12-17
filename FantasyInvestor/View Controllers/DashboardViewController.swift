@@ -22,6 +22,8 @@ class DashboardViewController: UIViewController {
     var distanceBetweenLineViewAndBalanceLabel: CGFloat = 0
     let formatter = NumberFormatter()
     
+    var textFileLoader: loadTextFile?
+    
     let currentUserID = PFUser.current()!.objectId!
     
     override func viewDidLoad() {
@@ -40,6 +42,10 @@ class DashboardViewController: UIViewController {
         
         calculateDistance()
         blurBackground()
+        
+        textFileLoader = loadTextFile()
+        textFileLoader?.delegate = self
+        textFileLoader?.loadStockData()
     }
 
     func calculateDistance() {
@@ -131,6 +137,14 @@ extension DashboardViewController {
     }
 }
 
+extension DashboardViewController: textFileDownloadDelegate {
+    
+    func didFinishDownloading(_ sender: loadTextFile) {
+        currentStocks = sender.stocks!
+    }
+    
+}
+
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -144,8 +158,18 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let symbol = portfolio.getSymbol(index: index)
+        var currentPrice = 0.0
         cell.instrumentLabel.text = symbol
         cell.priceLabel.text = "$\(portfolio.prices[symbol]!.0)"
+        for stock in currentStocks {
+            if stock.symbol == symbol {
+                currentPrice = stock.currentPrice
+            }
+        }
+//        cell.profitPercentageLabel.text = "\((currentPrice - portfolio.prices[symbol]!.0) / (portfolio.prices[symbol]!.0))"
+        print(currentPrice)
+        cell.profitPercentageLabel.text = "Percentage Profit"
+        print(cell.profitPercentageLabel.text)
         
         return cell
     }

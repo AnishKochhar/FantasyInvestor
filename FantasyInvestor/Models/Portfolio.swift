@@ -93,4 +93,5 @@ struct Portfolio {
 
 var portfolio: Portfolio = Portfolio(prices: [String: (Double, Double)]())
 var textFileLoader = loadTextFile()
+var currentStocks = [StockInfo]()
 

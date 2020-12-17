@@ -9,19 +9,12 @@
 import UIKit
 import Parse
 
-class AddInstrumentsCollectionViewController: UICollectionViewController, textFileDownloadDelegate {
+class AddInstrumentsCollectionViewController: UICollectionViewController{
     
-    var stocks: [StockInfo]?
     var instruments = [Stock]()
-    
-    var textFileLoader: loadTextFile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        textFileLoader = loadTextFile()
-        textFileLoader?.delegate = self
-        textFileLoader?.loadStockData()
         
         loadInstruments()
     }
@@ -40,10 +33,6 @@ class AddInstrumentsCollectionViewController: UICollectionViewController, textFi
         }
     }
     
-    func didFinishDownloading(_ sender: loadTextFile) {
-        self.stocks = textFileLoader?.stocks
-    }
-
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -76,7 +65,7 @@ class AddInstrumentsCollectionViewController: UICollectionViewController, textFi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedCell = collectionView.indexPathsForSelectedItems?.first else { return }
         if let target = segue.destination as? InstrumentDetailViewController {
-            target.stock = stocks?[selectedCell.row]
+            target.stock = currentStocks[selectedCell.row]
         }
     }
 }
