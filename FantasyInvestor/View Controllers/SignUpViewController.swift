@@ -77,6 +77,7 @@ class SignUpViewController: UIViewController {
         
         portfolio["User"] = userID
         portfolio["Instruments"] = ["Apple", "Amazon"]
+        portfolio["Volumes"] = [173.45, 45.23]
         portfolio["Prices"] = [111.90, 1034.32]
         portfolio["Balance"] = 1000000
         

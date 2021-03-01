@@ -109,12 +109,14 @@ extension DashboardViewController {
         let volumes = userPortfolio["Volumes"] as! [Double]
         let balance = userPortfolio["Balance"] as! Double
         let id = userPortfolio["User"] as! String
+        let leagues = userPortfolio["Leagues"] as! [String]
         assert(instruments.count == prices.count)
         for i in 0 ..< instruments.count {
             portfolio.addInstrument(symbol: instruments[i], price: prices[i], amount: volumes[i])
         }
         portfolio.setBalance(balance: balance)
         portfolio.setId(id: id)
+        portfolio.updateLeagues(leagues: leagues)
         
         self.tableView.reloadData()
         self.displayBalance()
@@ -167,9 +169,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
 //        cell.profitPercentageLabel.text = "\((currentPrice - portfolio.prices[symbol]!.0) / (portfolio.prices[symbol]!.0))"
-        print(currentPrice)
         cell.profitPercentageLabel.text = "Percentage Profit"
-        print(cell.profitPercentageLabel.text)
         
         return cell
     }

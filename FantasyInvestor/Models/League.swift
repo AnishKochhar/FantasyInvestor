@@ -9,11 +9,15 @@
 import Foundation
 
 struct League {
-    let name: String
-    let position: Int
+    var name: String
+    var users: [User]
+    var position: Int?
     
-    init(name: String, position: Int) {
+    internal init(name: String, users: [User], position: Int?) {
         self.name = name
+        self.users = users
         self.position = position
     }
+    
+    
 }

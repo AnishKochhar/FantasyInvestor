@@ -22,13 +22,6 @@ class loadTextFile {
     var response30min: [Response30min]?
     var delegate: textFileDownloadDelegate?
     
-//    init() {
-//        self.stocks = textFileLoader.stocks
-//        self.responseDaily = textFileLoader.responseDaily
-//        self.responseWeekly = textFileLoader.responseWeekly
-//        self.response5min = textFileLoader.response5min
-//        self.response30min = textFileLoader.response30min
-//    }
     
     func downloadTextFile(name: String) {
         let query = PFQuery(className: "TextFiles")

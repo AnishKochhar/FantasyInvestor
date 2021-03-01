@@ -12,6 +12,7 @@ import Parse
 struct Portfolio {
     var prices: [String: (Double, Double)]
     private var symbols = [String]()
+    private var leagues = [String]()
     var balance: Double = 0.0
     private var id = String()
     
@@ -38,6 +39,14 @@ struct Portfolio {
         self.symbols = symbols.filter { $0 != symbol }
         
         self.updatePortfolio()
+    }
+    
+    mutating func updateLeagues(leagues: [String]) {
+        self.leagues = leagues
+    }
+    
+    func getLeagues() -> [String] {
+        return self.leagues
     }
     
     func getAmount(symbol: String) -> Double {
@@ -84,6 +93,7 @@ struct Portfolio {
                 object["Balance"] = self.balance
                 object["Prices"] = pricesList
                 object["Volumes"] = volumesList
+                object["Leagues"] = self.leagues
                 
                 object.saveInBackground()
             }

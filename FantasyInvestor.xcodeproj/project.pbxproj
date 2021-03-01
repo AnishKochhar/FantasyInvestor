@@ -38,6 +38,7 @@
 		10E23F23250F930D0089D715 /* FantasyInvestorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E23F22250F930D0089D715 /* FantasyInvestorUITests.swift */; };
 		10EE7EAF25878E4A004DED10 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EE7EAE25878E4A004DED10 /* Response.swift */; };
 		10F15FB82561DE08001AC8F4 /* BuyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15FB72561DE08001AC8F4 /* BuyView.swift */; };
+		10FCBA4425ECECDD00B0727B /* loadLeagues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FCBA4325ECECDD00B0727B /* loadLeagues.swift */; };
 		1305BF4BAD4D7C4928E74FC3 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB78B28FAE35418B2E4AAC83 /* Pods_FantasyInvestor_FantasyInvestorUITests.framework */; };
 		EE02EE967AC69B3CFD03F6BD /* Pods_FantasyInvestorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */; };
 		FF0C643A2FE8D01BBCE01295 /* Pods_FantasyInvestor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E7DB63E5DBCDDA68447804 /* Pods_FantasyInvestor.framework */; };
@@ -95,6 +96,7 @@
 		10E23F24250F930D0089D715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10EE7EAE25878E4A004DED10 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		10F15FB72561DE08001AC8F4 /* BuyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyView.swift; sourceTree = "<group>"; };
+		10FCBA4325ECECDD00B0727B /* loadLeagues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadLeagues.swift; sourceTree = "<group>"; };
 		1702179C7979FCCB9D0165FC /* Pods-FantasyInvestor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.debug.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.debug.xcconfig"; sourceTree = "<group>"; };
 		53E44568A967FB08EC49DADB /* Pods_FantasyInvestorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FantasyInvestorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6055EF2E184AFC6D2178A9DA /* Pods-FantasyInvestor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FantasyInvestor.release.xcconfig"; path = "Target Support Files/Pods-FantasyInvestor/Pods-FantasyInvestor.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				10B088D92518C1A400B63237 /* Validation.swift */,
 				10ADA8D225363B1E007576E7 /* loadTextFile.swift */,
+				10FCBA4325ECECDD00B0727B /* loadLeagues.swift */,
 				109A5F1B25178E950076007F /* Extensions.swift */,
 			);
 			path = "Custom Classes";
@@ -504,6 +507,7 @@
 			files = (
 				10B088DC2518C7C800B63237 /* Portfolio.swift in Sources */,
 				1063894C251A631A00223CA3 /* DashboardViewController.swift in Sources */,
+				10FCBA4425ECECDD00B0727B /* loadLeagues.swift in Sources */,
 				10B4A21625751ECC00A14D60 /* SellView.swift in Sources */,
 				107AE850251202980033F8C8 /* User.swift in Sources */,
 				10EE7EAF25878E4A004DED10 /* Response.swift in Sources */,

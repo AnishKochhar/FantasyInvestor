@@ -9,15 +9,19 @@
 import Foundation
 
 class User {
+    
     let id: String
     let username: String
-    var portfolio: Portfolio
+    var profit: Int
     
-    
-    init(id: String, username: String, portfolio: Portfolio) {
+    internal init(id: String, username: String, profit: Int) {
         self.id = id
         self.username = username
-        self.portfolio = portfolio
+        self.profit = profit
+    }
+    
+    func setProfit(_ profit: Int) {
+        self.profit = profit
     }
 }
 
