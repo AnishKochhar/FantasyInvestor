@@ -72,6 +72,10 @@ extension LeaguesViewController: leagueLoaderDelegate {
         leagues.append(data)
         let indexPath = IndexPath(row: leagues.count - 1, section: 0)
         leagueTableView.insertRows(at: [indexPath], with: .automatic)
+        
+        for user in data.users {
+            print(user.id, user.profit)
+        }
     }
 }
 

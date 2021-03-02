@@ -12,15 +12,15 @@ class User {
     
     let id: String
     let username: String
-    var profit: Int
+    var profit: Double
     
-    internal init(id: String, username: String, profit: Int) {
+    internal init(id: String, username: String, profit: Double) {
         self.id = id
         self.username = username
         self.profit = profit
     }
     
-    func setProfit(_ profit: Int) {
+    func setProfit(_ profit: Double) {
         self.profit = profit
     }
 }

@@ -15,14 +15,10 @@ protocol leagueLoaderDelegate {
 
 class loadLeagues {
     
-    var finalData: [User]?
     var newLeague = League(name: "", users: [], position: nil)
     var code: String?
     var delegate: leagueLoaderDelegate?
-    
-    func getUserProfit(_ userID: String) -> Int {
-        return 100
-    }
+    var returned = 0
     
     func getLeagueData(code: String) {
         self.code = code
@@ -36,12 +32,12 @@ class loadLeagues {
             }
             if let objects = objects {
                 if let users = objects[0]["Users"] as? [String] {
-                    for userID in users {
+                    for i in 0..<users.count {
+                        let userID = users[i]
                         let newUser = User(id: userID, username: userID, profit: 0)
-                        newUser.setProfit(self.getUserProfit(userID))
                         data.append(newUser)
                     }
-                    self.newLeague.users = data.sorted(by: { $0.profit > $1.profit })
+                    self.newLeague.users = data
                 }
                 DispatchQueue.main.async {
                     self.didFinishDownload()
@@ -49,6 +45,28 @@ class loadLeagues {
             }
         }
     }
+    
+    func getUserProfit(_ userID: String, index: Int,  _ closure: @escaping () -> Void) {
+        let query = PFQuery(className: "Portfolio")
+        query.whereKey("User", equalTo: userID)
+        
+        query.findObjectsInBackground { (objects, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            if let objects = objects {
+                if let balance = objects[0]["Balance"] as? Double {
+                    self.newLeague.users[index].profit = balance
+                    self.returned += 1
+                    if self.returned == self.newLeague.users.count {
+                        closure()
+                    }
+                }
+            }
+        }
+    }
+    
     
     func findLeaguePosition() {
         let user = PFUser.current()!.objectId!
@@ -59,10 +77,22 @@ class loadLeagues {
         }
     }
     
+    func getBalances() {
+        let n = self.newLeague.users.count
+        for i in 0..<n {
+            self.getUserProfit(self.newLeague.users[i].id, index: i) {
+                DispatchQueue.main.async {
+                    self.newLeague.users.sort(by: { $0.profit > $1.profit })
+                    self.findLeaguePosition()
+                    self.delegate?.didFinishDownloading(self)
+                }
+            }
+        }
+    }
+    
     func didFinishDownload() {
         self.newLeague.name = self.code ?? ""
-        findLeaguePosition()
-        delegate?.didFinishDownloading(self)
+        self.getBalances()
     }
 }
 
