@@ -18,6 +18,7 @@
 		109A5F1C25178E950076007F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
 		109BCFBA2553215800D8A3D3 /* InstrumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */; };
 		109BCFBF255321E400D8A3D3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A5F1B25178E950076007F /* Extensions.swift */; };
+		10A3833225EF055400475FFA /* LeagueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A3833125EF055400475FFA /* LeagueDetailViewController.swift */; };
 		10A4AC9325212D6D008D09BB /* PerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */; };
 		10ADA8D125362410007576E7 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ADA8D025362410007576E7 /* Stock.swift */; };
 		10ADA8D325363B1E007576E7 /* loadTextFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ADA8D225363B1E007576E7 /* loadTextFile.swift */; };
@@ -71,6 +72,7 @@
 		109A5F1925175FD10076007F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		109A5F1B25178E950076007F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentDetailViewController.swift; sourceTree = "<group>"; };
+		10A3833125EF055400475FFA /* LeagueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailViewController.swift; sourceTree = "<group>"; };
 		10A4AC9225212D6D008D09BB /* PerformanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewController.swift; sourceTree = "<group>"; };
 		10ADA8D025362410007576E7 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		10ADA8D225363B1E007576E7 /* loadTextFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadTextFile.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1028FDA825347E7700DA9BC7 /* AddInstrumentsCollectionViewController.swift */,
 				109BCFB92553215800D8A3D3 /* InstrumentDetailViewController.swift */,
 				10D524572589749200314D3B /* LeaguesViewController.swift */,
+				10A3833125EF055400475FFA /* LeagueDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				10E23F05250F930A0089D715 /* SignUpViewController.swift in Sources */,
 				109A5F1C25178E950076007F /* Extensions.swift in Sources */,
 				1063894E251A671C00223CA3 /* DashboardTableCells.swift in Sources */,
+				10A3833225EF055400475FFA /* LeagueDetailViewController.swift in Sources */,
 				10A4AC9325212D6D008D09BB /* PerformanceTableViewController.swift in Sources */,
 				10E23F01250F930A0089D715 /* AppDelegate.swift in Sources */,
 				109A5F1A25175FD10076007F /* LogInViewController.swift in Sources */,

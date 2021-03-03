@@ -31,6 +31,9 @@ class loadLeagues {
                 return
             }
             if let objects = objects {
+                if let name = objects[0]["Name"] as? String {
+                    self.newLeague.name = name
+                }
                 if let users = objects[0]["Users"] as? [String] {
                     for i in 0..<users.count {
                         let userID = users[i]
@@ -91,7 +94,6 @@ class loadLeagues {
     }
     
     func didFinishDownload() {
-        self.newLeague.name = self.code ?? ""
         self.getBalances()
     }
 }
