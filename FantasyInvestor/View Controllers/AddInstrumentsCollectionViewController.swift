@@ -6,10 +6,16 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ This class is responsible for:
+    a) Getting the stock's image + name from Back4App
+    b) Presenting this data in a UICollectionView
+*/
+
 import UIKit
 import Parse
 
-class AddInstrumentsCollectionViewController: UICollectionViewController{
+class AddInstrumentsCollectionViewController: UICollectionViewController {
     
     var instruments = [Stock]()
 

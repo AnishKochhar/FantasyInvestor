@@ -13,6 +13,7 @@ protocol textFileDownloadDelegate {
     func didFinishDownloading(_ sender: loadTextFile)
 }
 
+
 class loadTextFile {
     
     var stocks: [StockInfo]?
@@ -47,31 +48,27 @@ class loadTextFile {
                     case "Instruments.txt":
                         let stocks = try JSONDecoder().decode([StockInfo].self, from: fileData)
                         self.stocks = stocks
-                        textFileLoader.stocks = stocks
                     case "1day.txt":
                         let responseDaily = try JSONDecoder().decode([ResponseDaily].self, from: fileData)
                         self.responseDaily = responseDaily
-                        textFileLoader.responseDaily = responseDaily
                     case "1week.txt" :
                         let responseWeekly = try JSONDecoder().decode([ResponseWeekly].self, from: fileData)
                         self.responseWeekly = responseWeekly
-                        textFileLoader.responseWeekly = responseWeekly
                     case "5min.txt" :
                         let response5min = try JSONDecoder().decode([Response5min].self, from: fileData)
                         self.response5min = response5min
-                        textFileLoader.response5min = response5min
                     case "30min.txt" :
                         let response30min = try JSONDecoder().decode([Response30min].self, from: fileData)
                         self.response30min = response30min
-                        textFileLoader.response30min = response30min
                     default:
+                        print("Invalid name: \(name)")
                         return
                     }
                     DispatchQueue.main.async {
                         self.didFinishDownload()
                     }
                 } catch {
-                    print(error)
+                    print("Error: \(error)")
                 }
             }
         })

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LogInViewController: UIViewController {
 
@@ -28,7 +29,23 @@ class LogInViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func loadDashboard() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashboardViewController = storyboard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+        UIApplication.shared.windows.first?.rootViewController = dashboardViewController
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
+    }
+    
     @IBAction func logIn(_ sender: Any) {
+        PFUser.logInWithUsername(inBackground: emailField.text!, password: passwordField.text!) { (user, error) in
+            if user != nil {
+                self.loadDashboard()
+            } else{
+                if let descrip = error?.localizedDescription{
+                    self.displayErrorMessage(message: (descrip))
+                }
+            }
+        }
     }
     
     @IBAction func switchToSignUp(_ sender: Any) {
@@ -40,6 +57,17 @@ class LogInViewController: UIViewController {
         
         newVC.modalPresentationStyle = .fullScreen
         self.present(newVC, animated: true)
+    }
+    
+    func displayErrorMessage(message: String) {
+        let alertView = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default)
+        alertView.addAction(OKAction)
+        if let presenter = alertView.popoverPresentationController {
+            presenter.sourceView = self.view
+            presenter.sourceRect = self.view.bounds
+        }
+        self.present(alertView, animated: true, completion: nil)
     }
     
 }

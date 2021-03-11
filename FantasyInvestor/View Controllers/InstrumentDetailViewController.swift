@@ -6,6 +6,13 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ This class is responsible for
+    a) drawing the chart data on the screen,
+    b) handling switching between charts,
+    c) loading and dismissing buy / sell views when requested
+*/
+
 import UIKit
 import Charts
 

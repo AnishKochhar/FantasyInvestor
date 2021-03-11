@@ -6,6 +6,10 @@
 //  Copyright © 2021 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Gets league information from database, and returns a single League object
+ */
+
 import Foundation
 import Parse
 

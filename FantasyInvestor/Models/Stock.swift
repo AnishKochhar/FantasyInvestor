@@ -6,7 +6,6 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
-import UIKit
 import Foundation
 import Parse
 

@@ -6,6 +6,12 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ This class is responsible for:
+    a) Downloading a user's portfolio,
+    b) Drawing the dashboard UI, including each stock's info cell, scroll views, and the profit label
+*/
+
 import UIKit
 import Parse
 

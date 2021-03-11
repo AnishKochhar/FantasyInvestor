@@ -68,6 +68,10 @@ struct Portfolio {
         self.id = id
     }
     
+    func getID() -> String {
+        return self.id
+    }
+    
     func checkIfExists(target: String) -> Bool {
         for symbol in symbols {
             if (target == symbol) { return false }

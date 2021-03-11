@@ -20,6 +20,7 @@
 */
 
 import UIKit
+import Parse
 
 class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -85,7 +86,18 @@ extension LeaguesViewController: leagueLoaderDelegate {
 extension LeaguesViewController {
     
     @IBAction func createLeague(_ sender: Any) {
-        print(portfolio)
+        let newCode = "XY21"
+        let newName = "Serie A"
+        let ac = UIAlertController(title: "New League Created!", message: "Your league name is '\(newName)'\nCode: \(newCode)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        ac.addAction(action)
+        
+        present(ac, animated: true)
+        let currentUser = User(id: portfolio.getID(), username: portfolio.getID(), profit: portfolio.balance)
+        let newLeague = League(name: newName, users: [currentUser], position: 1)
+        
+        leagues.append(newLeague)
+        leagueTableView.reloadData()
     }
     
     @IBAction func joinLeague(_ sender: Any) {

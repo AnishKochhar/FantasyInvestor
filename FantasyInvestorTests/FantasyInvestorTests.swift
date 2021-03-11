@@ -6,6 +6,11 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Unit tests for Mid-Development testing
+    Validates user input
+ */
+
 import XCTest
 @testable import FantasyInvestor
 
