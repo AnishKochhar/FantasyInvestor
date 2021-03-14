@@ -6,6 +6,10 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Validates user input
+ */
+
 import Foundation
 
 class Validation {

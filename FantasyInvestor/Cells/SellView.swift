@@ -6,6 +6,12 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Allows users to sell stocks.
+ 
+ The only choice they have is to sell ALL of their investment in a particular stock
+ */
+
 import UIKit
 
 class sellView: UIView {

@@ -87,7 +87,7 @@ class loadTextFileIT: XCTestCase {
         XCTAssert(tester.finished)
     }
     
-    func testGivenInalidJsonWhenTurnIntoSwiftDataCalledThenErrorThrown() {
+    func testGivenValidJsonWithWrongNameWhenTurnIntoSwiftDataCalledThenErrorThrown() {
         // 1. given
         let sampleJson = """
                     [
@@ -133,12 +133,50 @@ class loadTextFileIT: XCTestCase {
         XCTAssert(!tester.finished)
     }
     
-    func testGivenValidJsonWithWrongNameWhenTurnIntoSwiftDataCalledThenErrorThrown() {
+    func testGivenInalidJsonWhenTurnIntoSwiftDataCalledThenErrorThrown() {
         // 1. given
+        let sampleJson = """
+                    [
+                        {
+                            Symbol: "AAPL",
+                            "Time Series (5min)": {
+                                "2020-12-14 20:00:00": {
+                                    "1. open": "121.8900",
+                                    "2. high": "121.8900",
+                                    "3. low": "121.8400",
+                                    "4. close": "121.8900",
+                                    "5. volume": "4496"
+                                },
+                                "2020-12-14 19:55:00": {
+                                    "1. open": "121.9100",
+                                    "2. high": "121.9100",
+                                    "3. low": "121.8000",
+                                    "4. close": "121.8900",
+                                    "5. volume": "6522"
+                                },
+                                "2020-12-14 11:45:00": {
+                                    "1. open": "122.7200",
+                                    "2. high": "122.8400",
+                                    "3. low": "122.6800",
+                                    "4. close": "122.7880",
+                                    "5. volume": "482489"
+                                }
+                            }
+                        }
+                    ]
+        """
+        let pfFileObject = PFFileObject(data: Data(sampleJson.utf8))
+        if (pfFileObject == nil) {
+            assert(false)
+        }
+        
+        let tester = testClass()
 
         // 2. when
+        tester.callTurnIntoSwiftData(pfFileObject!, name: "5min.txt")
         
         // 3. then
+        XCTAssert(!tester.finished)
         
     }
 

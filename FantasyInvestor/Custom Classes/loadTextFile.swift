@@ -6,6 +6,12 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Downloads all of the text files from the database
+ 
+ First uses Parse to get them, then Parse to convert that file to JSON, then JSONDecoder to convert that JSON into Swift objects
+ */
+
 import Foundation
 import Parse
 

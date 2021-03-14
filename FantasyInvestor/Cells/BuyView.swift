@@ -6,6 +6,11 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ The view that pops up to allow users to buy new stocks
+ Needs to know how much they wish to buy - via a picker view
+ */
+
 import UIKit
 
 class buyView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {

@@ -6,6 +6,10 @@
 //  Copyright © 2021 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Displays detail about a particular League
+ */
+
 import UIKit
 
 class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -14,9 +18,13 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var leagueDetailTable: UITableView!
     
     var currentLeague: League?
+    let formatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
         
         leagueDetailTable.delegate = self
         leagueDetailTable.dataSource = self
@@ -36,7 +44,7 @@ class LeagueDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
         
         cell.nameLabel.text = "#\(indexPath.row + 1). \(currentLeague?.users[indexPath.row].id ?? "Nil")"
-        cell.balanceLabel.text = "$\(currentLeague?.users[indexPath.row].profit ?? 0.0)"
+        cell.balanceLabel.text = "$\(formatter.string(from: NSNumber(value: currentLeague?.users[indexPath.row].profit ?? 0.0))!)"
         
         return cell
     }

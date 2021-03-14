@@ -6,6 +6,11 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Manages the table view embedded in the dashboard.
+ Very standard table view methods
+ */
+
 import UIKit
 
 class PerformanceTableViewController: UITableViewController {

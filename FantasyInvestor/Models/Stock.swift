@@ -6,6 +6,11 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Stock: Contains an image and a symbol (for use in the collection view)
+ StockInfo: Provides extra information about a stock, e.g., yearFounded (for use in the detail screen)
+ */
+
 import Foundation
 import Parse
 

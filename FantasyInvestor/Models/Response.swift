@@ -6,6 +6,10 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ The object that JSON returned from AlphaVantage is decoded into
+ */
+
 import Foundation
 
 

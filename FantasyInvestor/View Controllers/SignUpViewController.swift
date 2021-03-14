@@ -6,6 +6,12 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ If user already logged in, taken straight to dashboard.
+ Prompts user for username, email and password
+ Then creates default portfolio for them
+ */
+
 import UIKit
 import Parse
 

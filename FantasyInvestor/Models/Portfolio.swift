@@ -6,6 +6,12 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ A very simple class with many getter/setter methods
+ 
+ There is a global portfolio created at the bottom of this class that it is the current user's portfolio
+ */
+
 import Foundation
 import Parse
 

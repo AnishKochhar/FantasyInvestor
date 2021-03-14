@@ -6,6 +6,10 @@
 //  Copyright © 2020 Anish Kochhar. All rights reserved.
 //
 
+/*
+ Prompts for username and password, and checks in database for match
+ */
+
 import UIKit
 import Parse
 
